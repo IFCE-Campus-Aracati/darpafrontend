@@ -1,10 +1,21 @@
-.container {
-  min-height: 100vh; /* altura mínima para cobrir toda a página */
-  position: relative; /* para que o position:absolute do footer funcione em relação ao container */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%; /* para ocupar toda a largura do container */
+body,
+html {
+  background-color: #fff;
+  color: #fff;
+}
+
+a,
+a:hover,
+a:visited {
+  color: unset;
+  text-decoration: none;
 }

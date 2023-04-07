@@ -1,0 +1,40 @@
+.menu1 {
+  position: absolute;
+  top: 48px;
+  right: 16px;
+  z-index: 1;
+  width: 160px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.menu1-item {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.menu1-item:hover {
+  background-color: #f5f5f5;
+}
+
+.menu1-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.menu1-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1F2421;
+}
+
+
+
