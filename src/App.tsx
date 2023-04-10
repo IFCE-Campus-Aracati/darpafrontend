@@ -1,20 +1,27 @@
-import Header from "./components/Header";
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import 'normalize.css';
 import './index.css';
-import Footer from "./components/Footer";
+import Footer from './components/Footer';
 
 function App() {
- return (
-  <>
-    <Header username={"User"} onLogout={function (): void {
-       throw new Error("Function not implemented.");
-     } }/>
-  
-    <Footer  />
+  return (
+    <>
+    <div className="container">
+      <Header
+        username="User"
+        onLogout={() => {
+          throw new Error('Function not implemented.');
+        }}
+      />
+      <Sidebar isOpen={false} onClose={function (): void {
+        throw new Error('Function not implemented.');
+      } } />
+    </div>
+   
+    </>
     
-  </>
-  
- )
+  );
 }
 
-export default App
+export default App;
