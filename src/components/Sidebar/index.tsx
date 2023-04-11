@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import SidebarButton from '../SidebarButton';
+import UserProfile from '../UserProfile';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -15,7 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   return (
     <div className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
       <nav className="sidebar-nav">
-  
+            <UserProfile />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Minhas solicitações"

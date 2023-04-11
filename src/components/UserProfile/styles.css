@@ -1,0 +1,22 @@
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    
+  }
+  
+  .user-profile img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .user-profile h2,
+  .user-profile p {
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    margin: 0;
+  }
+  
