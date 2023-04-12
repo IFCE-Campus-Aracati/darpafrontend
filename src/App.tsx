@@ -30,7 +30,7 @@ function App() {
       <CancelButton onClick={()=> console.log("cancelar")}/>
       
     </div>
-      <Footer/>
+    
       
     
 
