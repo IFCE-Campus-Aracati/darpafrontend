@@ -35,7 +35,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               isSelected={false}
               onClick={handleLinkClick}
             />
-      
       </nav>
     </div>
   );

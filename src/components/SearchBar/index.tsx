@@ -20,7 +20,7 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
       <FiSearch className="search-icon" />
       <input
         type="text"
-        placeholder="Pesquisar"
+        placeholder="Buscar"
         value={searchTerm}
         onChange={handleInputChange}
         className="search-input"

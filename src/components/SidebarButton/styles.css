@@ -11,6 +11,8 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    margin-left: 25px;
+    /*TODO: FIX THIS*/
   }
   
   .sidebar-button:hover {
