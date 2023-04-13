@@ -18,9 +18,36 @@ table {
  td {
     text-align: center;
   }
+
+  .aprovado {
+    color: #8EC63f;
+  }
+  
+  .pendente {
+    color: #EFA300;
+  }
+  
+  .reprovado {
+    color: #B94A48;
+  }
+  
+  .concluido {
+    color: #0038FF;
+  }
+  
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+  }
   
   .icon-button {
+    scale: 0.7;
     background-color: transparent;
     border: none;
+  }
+
+  .icon-button:hover {
+    cursor: pointer;
   }
   

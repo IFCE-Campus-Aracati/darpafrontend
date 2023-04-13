@@ -34,7 +34,7 @@ function PrintRequestsTable() {
       date: '07/04/2022',
       type: 'Impressão 3D',
       description: 'Busto do Lula em PLA Azul',
-      status: 'Concluído'
+      status: 'Concluido'
     },
   ];
 
@@ -59,8 +59,8 @@ function PrintRequestsTable() {
             <td>{request.date}</td>
             <td>{request.type}</td>
             <td>{request.description}</td>
-            <td>{request.status}</td>
-            <td>
+            <td className={request.status.toLowerCase()}>{request.status}</td>
+            <td className='action-buttons'>
               <button className='icon-button'><img src='src\assets\iconmonstr-pencil-10 1.svg'></img></button>
               <button className='icon-button'><img src='src\assets\trash 1.svg'></img></button>
             </td>
