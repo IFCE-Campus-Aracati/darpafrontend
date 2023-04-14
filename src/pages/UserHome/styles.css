@@ -1,8 +1,9 @@
+
 .buttons{
   width: 80%;
   margin-top: 100px;
   margin-bottom: 15px;
-  margin-left: 300px;
+  align-self: center;
   border-collapse: collapse;
   border-spacing: 0;
   display: flex;
@@ -12,7 +13,7 @@
 }
 
 .data-table{
-  margin-left: 290px;
+  align-self: center;
   width: 80%;
   padding: 10px;
     
@@ -29,6 +30,7 @@
     transition: 0.5s;
     transform: translateX(-100%);
     padding-top: 10px;
+    z-index: 1;
   }
   
   .sidebar-open {
@@ -43,6 +45,6 @@
     font-weight: 700;
     font-style: ExtraBold;
     margin-left: 300px;
-    margin-top: 18px;
+    margin-top: 80px;
   }
   

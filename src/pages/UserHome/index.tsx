@@ -4,17 +4,19 @@ import './styles.css';
 import PrintRequestsTable from "../../components/PrintTable";
 import SearchBar from "../../components/SearchBar";
 import SolicitationButton from "../../components/SolicitationButton";
+import Footer from "../../components/Footer";
 
 function UserHome() {
     return (
         <>
-        <div className="container">
-        <Header
+         <Header 
             username="User"
             onLogout={() => {
             throw new Error('Function not implemented.');
             }}
         />
+        <div className="container">
+       
         <Sidebar isOpen={false} onClose={function (): void {
             throw new Error('Function not implemented.');
         } } />
@@ -32,7 +34,7 @@ function UserHome() {
              </div>  
         
         </div>
-        
+        <Footer/>
         
         
     
