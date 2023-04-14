@@ -6,7 +6,7 @@ import './style.css'
     const cancelButton: React.FC<ButtonProps>= ({ onClick})=> {
     return (
         <button className="cancel-button" onClick={onClick}>
-             cancelar
+             Cancelar
         </button>
     );
   }
