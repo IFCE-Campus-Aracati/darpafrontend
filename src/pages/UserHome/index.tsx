@@ -5,6 +5,7 @@ import PrintRequestsTable from "../../components/PrintTable";
 import SearchBar from "../../components/SearchBar";
 import SolicitationButton from "../../components/SolicitationButton";
 import Footer from "../../components/Footer";
+import Pagination from "../../components/Pagination";
 
 function UserHome() {
     return (
@@ -31,6 +32,9 @@ function UserHome() {
         </div>
             <div className="data-table">
                 <PrintRequestsTable/>
+                <Pagination totalItems={10} itemsPerPage={5} currentPage={0} onPageChange={function (page: number): void {
+                        throw new Error("Function not implemented.");
+                    } }/>
              </div>  
         
         </div>
