@@ -1,5 +1,6 @@
-import React from 'react';
 import './styles.css';
+
+import React from 'react';
 
 interface PaginationProps {
   totalItems: number;
@@ -8,7 +9,12 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, currentPage, onPageChange }) => {
+const Pagination: React.FC<PaginationProps> = ({
+  totalItems,
+  itemsPerPage,
+  currentPage,
+  onPageChange,
+}) => {
   // Calcula o número total de páginas
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
@@ -18,31 +24,30 @@ const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, curre
   return (
     <nav>
       <ul className="pagination">
+        <button
+          className="pagination-button"
+          onClick={() => onPageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          <img src="src\assets\button-previous.svg" alt="" />
+        </button>
+
+        {pages.map((page) => (
           <button
-            className="pagination-button"
-            onClick={() => onPageChange(currentPage - 1)}
-            disabled={currentPage === 1}
+            key={page}
+            className={`pagination-button ${page === currentPage ? 'active' : ''}`}
+            onClick={() => onPageChange(page)}
           >
-            <img src="src\assets\button-previous.svg" alt="" />
+            {page}
           </button>
-        
-        {pages.map(page => (
-          
-            <button  key={page}
-              className={`pagination-button ${page === currentPage ? 'active' : ''}`}
-              onClick={() => onPageChange(page)}
-            >
-              {page}
-            </button>
-          
         ))}
-          <button
-            className="pagination-button"
-            onClick={() => onPageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-          >
+        <button
+          className="pagination-button"
+          onClick={() => onPageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
           <img src="src\assets\button-next.svg" alt="" />
-          </button>
+        </button>
       </ul>
     </nav>
   );

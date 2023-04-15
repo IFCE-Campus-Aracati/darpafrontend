@@ -1,5 +1,6 @@
-import React from 'react';
 import './styles.css';
+
+import React from 'react';
 
 function PrintRequestsTable() {
   // Dados mocados das solicitações de impressão
@@ -10,7 +11,7 @@ function PrintRequestsTable() {
       date: '01/04/2022',
       type: 'Impressão 3D',
       description: 'Impressão em Abs preto',
-      status: 'Pendente'
+      status: 'Pendente',
     },
     {
       id: 2,
@@ -18,7 +19,7 @@ function PrintRequestsTable() {
       date: '03/04/2022',
       type: 'Corte a Laser',
       description: 'Corte em MDF 3mm',
-      status: 'Aprovado'
+      status: 'Aprovado',
     },
     {
       id: 3,
@@ -26,7 +27,7 @@ function PrintRequestsTable() {
       date: '05/04/2022',
       type: 'Impressão 3D',
       description: 'Busto do mito em PLA vermelho',
-      status: 'Reprovado'
+      status: 'Reprovado',
     },
     {
       id: 4,
@@ -34,7 +35,7 @@ function PrintRequestsTable() {
       date: '07/04/2022',
       type: 'Impressão 3D',
       description: 'Busto do Lula em PLA Azul',
-      status: 'Concluido'
+      status: 'Concluido',
     },
   ];
 
@@ -52,7 +53,7 @@ function PrintRequestsTable() {
         </tr>
       </thead>
       <tbody>
-        {printRequests.map(request => (
+        {printRequests.map((request) => (
           <tr key={request.id}>
             <td>{request.id}</td>
             <td>{request.name}</td>
@@ -60,9 +61,13 @@ function PrintRequestsTable() {
             <td>{request.type}</td>
             <td>{request.description}</td>
             <td className={request.status.toLowerCase()}>{request.status}</td>
-            <td className='action-buttons'>
-              <button className='icon-button'><img src='src\assets\iconmonstr-pencil-10 1.svg'></img></button>
-              <button className='icon-button'><img src='src\assets\trash 1.svg'></img></button>
+            <td className="action-buttons">
+              <button className="icon-button">
+                <img src="src\assets\iconmonstr-pencil-10 1.svg" alt=""></img>
+              </button>
+              <button className="icon-button">
+                <img src="src\assets\trash 1.svg" alt=""></img>
+              </button>
             </td>
           </tr>
         ))}
