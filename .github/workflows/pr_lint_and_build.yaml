@@ -29,7 +29,7 @@ jobs:
 
       - name: check build success
         run: |
-          if [ ! -d "build" ]; then
+          if [ ! -d "dist" ]; then
             echo "Build failed"
             exit 1
           else
