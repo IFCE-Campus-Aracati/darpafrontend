@@ -1,0 +1,37 @@
+name: Lint and Build
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  lint-and-build:
+    runs-on: ubunut-latest
+    steps:
+      - name: checkout code
+        users: actions/checkout@v2
+
+      - name: use node.js 18.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.x'
+
+      - name: install dependencies
+        run: npm i
+      
+      - name: lint with eslint
+        run: npm run lint
+
+      - name: build project
+        run: npm run build
+
+      - name: check build success
+        run: |
+          if [ ! -d "build" ]; then
+            echo "Build failed"
+            exit 1
+          else
+            echo "Build succeeded"
+          fi
