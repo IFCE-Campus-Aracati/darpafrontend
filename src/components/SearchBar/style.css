@@ -1,5 +1,4 @@
 .search-container {
-
   width: 800px;
   height: 50px;
   display: flex;
@@ -23,6 +22,4 @@
   margin-left: 8px;
   color: #333;
   font-size: 15px;
-
 }
-

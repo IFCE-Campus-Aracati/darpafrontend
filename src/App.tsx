@@ -1,23 +1,16 @@
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 import 'normalize.css';
 import './index.css';
-import PrintRequestsTable from './components/PrintTable';
-import UserHome from './pages/UserHome';
 
+import Header from './components/Header';
+import PrintRequestsTable from './components/PrintTable';
+import Sidebar from './components/Sidebar';
+import UserHome from './pages/UserHome';
 
 function App() {
   return (
     <>
-    <UserHome/>
-    
-      
-    
-
-  
-   
+      <UserHome />
     </>
-    
   );
 }
 
