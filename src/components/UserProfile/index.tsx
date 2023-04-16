@@ -2,16 +2,18 @@ import './styles.css';
 
 import React, { useState } from 'react';
 
+import userProfileimg from '../../assets/Vector.svg';
+
 function UserProfile() {
   const [user, setUser] = useState({
     name: 'Reperkilson',
-    photo: 'https://via.placeholder.com/150',
+    photo: userProfileimg,
     qualification: 'Aluno, Bolsista',
   });
 
   return (
     <div className="user-profile">
-      <img src="src\assets\Vector.svg" alt="Foto do usuário" />
+      <img src={user.photo} alt="Foto do usuário" />
       <h2>{user.name}</h2>
       <p>{user.qualification}</p>
     </div>
