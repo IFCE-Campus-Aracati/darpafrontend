@@ -1,0 +1,112 @@
+.container-background-CA1 {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: #0A5517;
+  display: flex;
+
+}
+
+.container-background-CA2 {
+  position: absolute;
+  width: 960px;
+  height: 1080px;
+  left: 960px;
+
+
+  background: #46A151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container-background-CA3 {
+  position: absolute;
+  width: 460px;
+  height: 740px;
+  left: 250px;
+  top: 164px;
+  background: #FFFFFF;
+  border-radius: 15px;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.titleCA {
+  margin-bottom: 67px;
+  margin-left: 75px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+
+  color: #1F2421;
+}
+
+.logoifce {
+  margin-left: 133.75px;
+  margin-top: 449.75px;
+}
+
+.inputCA input {
+  margin-bottom: 20px;
+  margin-left: 75px;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: flex-start;
+  padding: 20px;
+  width: 322px;
+  height: 39px;
+
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #AFACAC;
+
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #AFACAC;
+}
+
+.button-CA {
+  margin-left: 75px;
+  margin-top: 58px;
+  margin-bottom: 77px;
+  border-radius: 5px;
+  height: 39px;
+  width: 322px;
+  background: #0A5517;
+
+  border-radius: 5px;
+  border-style: none;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+.back-login {
+  margin-left: 75px;
+}
+
+.back-login a {
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1F2421;
+}
