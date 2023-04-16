@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto&display=swap');
 
 * {
   margin: 0;
@@ -12,9 +12,8 @@
   height: 100vh;
 }
 
-
 .sidebar {
-  background-color: #0A5517;
+  background-color: #0a5517;
   width: 200px;
   height: 100%;
   position: fixed;
