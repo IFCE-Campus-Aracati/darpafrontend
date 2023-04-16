@@ -1,7 +1,7 @@
 .footer {
   margin-top: -35px;
-  height: 100%; 
-  background-color: #0A5517;
+  height: 100%;
+  background-color: #0a5517;
   color: #fff;
   padding: 30px 30px;
   z-index: -1;
@@ -28,7 +28,7 @@
   font-size: 1.2rem;
   font-weight: regular;
   font-family: 'Roboto', sans-serif;
-  color:#46A151;
+  color: #46a151;
   margin-bottom: 15px;
   position: relative;
   text-align: left;
@@ -41,13 +41,13 @@
 }
 
 .column-list::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: -10px;
   width: 3px;
   height: 95%;
-  background-color: #EFA300;
+  background-color: #efa300;
 }
 
 .column-list li {
