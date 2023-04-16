@@ -1,4 +1,22 @@
+/*.container-background-l1: define o fundo da tela, com a cor verde escuro;
+.container-background-l2: define uma área central em um tom mais claro de verde e centraliza os elementos dentro dela;
+.container-background-l3: define a caixa de login, com fundo branco e bordas arredondadas;
+.logoifce: posiciona a logo do IFCE no centro da tela;
+.title: estiliza o título "Bem-vindo!" na tela de login;
+.subtitle: estiliza o subtítulo "Faça login para continuar" na tela de login;
+.inputEmail: estiliza o campo de entrada de email na tela de login;
+.inputEmail input: estiliza o input do campo de email;
+.inputSenha: estiliza o campo de entrada de senha na tela de login;
+.inputSenha input: estiliza o input do campo de senha;
+.button-login: estiliza o botão de login na tela de login;
+.resetPassword: posiciona o link "Esqueci minha senha" à direita do campo de senha;
+.resetPassword a: estiliza o link de "Esqueci minha senha";
+.createAcc: posiciona o link "Criar uma conta" no final da tela de login;
+.createAcc a: estiliza o link de "Criar uma conta".*/
+
 .container-background-l1 {
+  display: flex;
+
   position: absolute;
   width: 1920px;
   height: 1080px;
@@ -7,18 +25,21 @@
 }
 
 .container-background-l2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
   position: absolute;
   width: 960px;
   height: 1080px;
 
   background: #46a151;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   flex-direction: column;
-}
 
-.container-background-l3 {
   position: absolute;
   width: 460px;
   height: 740px;
@@ -26,11 +47,6 @@
   top: 164px;
   background: #ffffff;
   border-radius: 15px;
-
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .logoifce {
@@ -84,16 +100,9 @@
   width: 322px;
   height: 39px;
   border-radius: 5px;
-  border-style: solid;
-  border-color: #afacac;
-
+  border: 1.5px solid #AFACAC;
   text-decoration: none;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #afacac;
+  color: #AFACAC;
 }
 
 .inputSenha {
@@ -115,18 +124,11 @@
   padding: 20px;
   width: 322px;
   height: 39px;
-
+  border: 1.5px solid #AFACAC;
   border-radius: 5px;
-  border-style: solid;
-  border-color: #afacac;
 
   text-decoration: none;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #afacac;
+  color: #AFACAC;
 }
 
 .button-login {

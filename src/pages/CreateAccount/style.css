@@ -7,16 +7,17 @@
 }
 
 .container-background-CA2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: absolute;
   width: 960px;
   height: 1080px;
   left: 960px;
 
-  background: #46a151;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+
+  background: #46A151;
 }
 
 .container-background-CA3 {
@@ -64,16 +65,9 @@
   height: 39px;
 
   border-radius: 5px;
-  border-style: solid;
-  border-color: #afacac;
-
+  border: 1.5px solid #AFACAC;
   text-decoration: none;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #afacac;
+  color: #AFACAC;
 }
 
 .button-CA {

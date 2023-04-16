@@ -1,25 +1,31 @@
 import './style.css';
 
 import React from 'react';
+import logoIFCE from '../../assets/img/logo-ifce.svg'
+import { Link } from 'react-router-dom';
+
+
 
 interface LoginPgSet {
   onLogout: () => void;
 }
 
-const LoginPg: React.FC<LoginPgSet> = ({ onLogout }) => {
+const LoginForm: React.FC<LoginPgSet> = ({ onLogout }) => {
   return (
     <div className="container-background-l1">
       <div className="logoifce">
-        <img src="src/assets/img/logo-ifce.svg" alt="IFCE" />
+        <img src={logoIFCE} alt="IFCE" />
       </div>
       <div className="container-background-l2">
         <div className="container-background-l3">
-          <header className="title">
+
+          <h1 className="title">
             <span>Fazer login</span>
-          </header>
-          <header className="subtitle">
+          </h1>
+          <h2 className="subtitle">
             <span>Bem vindo! Por favor, informe seus dados.</span>
-          </header>
+          </h2>
+
 
           <div className="inputEmail">
             <label htmlFor="email">Email</label>
@@ -35,9 +41,13 @@ const LoginPg: React.FC<LoginPgSet> = ({ onLogout }) => {
           <button className="button-login">Login</button>
           <div className="resetPassword">
             <a href="esqueceu">Esqueceu sua senha?</a>
-          </div>
+            {//<Link to="/esqueceu-senha">Esqueceu sua senha?</Link>
+            }
+           </div>
           <div className="createAcc">
             <a href="cadastra">Não tem cadastro?</a>
+            {//<Link to="/CreateAccount">Esqueceu sua senha?</Link>
+            }
           </div>
         </div>
       </div>
@@ -45,4 +55,5 @@ const LoginPg: React.FC<LoginPgSet> = ({ onLogout }) => {
   );
 };
 
-export default LoginPg;
+
+export default LoginForm;
