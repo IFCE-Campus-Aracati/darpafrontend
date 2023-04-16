@@ -1,7 +1,10 @@
 .footer {
-  background-color: #0A5517;
+  margin-top: -35px;
+  height: 100%;
+  background-color: #0a5517;
   color: #fff;
-  padding: 30px 0;
+  padding: 30px 30px;
+  z-index: -1;
 }
 
 .footer-wrapper {
@@ -25,7 +28,7 @@
   font-size: 1.2rem;
   font-weight: regular;
   font-family: 'Roboto', sans-serif;
-  color:#46A151;
+  color: #46a151;
   margin-bottom: 15px;
   position: relative;
   text-align: left;
@@ -34,17 +37,17 @@
 .column-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 8px;
 }
 
 .column-list::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: -10px;
   width: 3px;
-  height: 100%;
-  background-color: #EFA300;
+  height: 95%;
+  background-color: #efa300;
 }
 
 .column-list li {
@@ -56,7 +59,7 @@
 }
 
 .column-list li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .column-list li a {

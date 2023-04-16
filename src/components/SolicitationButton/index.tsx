@@ -1,15 +1,16 @@
-import './style.css'
-import {MdAdd} from 'react-icons/md'
+import './style.css';
 
-    interface ButtonProps{
-        onClick :() =>void;
-    }
-    const SolicitationButton: React.FC<ButtonProps>= ({ onClick})=> {
-    return (
-        <button className="new-request-button" onClick={onClick}>
-            <MdAdd/> Nova solicitação
-        </button>
-    );
-  }
+import { MdAdd } from 'react-icons/md';
 
-  export default SolicitationButton;
+interface ButtonProps {
+  onClick: () => void;
+}
+const SolicitationButton: React.FC<ButtonProps> = ({ onClick }) => {
+  return (
+    <button className="new-request-button" onClick={onClick}>
+      <MdAdd /> Nova solicitação
+    </button>
+  );
+};
+
+export default SolicitationButton;

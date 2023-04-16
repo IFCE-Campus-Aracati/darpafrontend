@@ -2,9 +2,8 @@
   position: absolute;
   width: 1920px;
   height: 1080px;
-  background: #0A5517;
+  background: #0a5517;
   display: flex;
-
 }
 
 .container-background-CA2 {
@@ -13,8 +12,7 @@
   height: 1080px;
   left: 960px;
 
-
-  background: #46A151;
+  background: #46a151;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +25,7 @@
   height: 740px;
   left: 250px;
   top: 164px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 15px;
 
   display: flex;
@@ -47,7 +45,7 @@
   line-height: 42px;
   text-align: center;
 
-  color: #1F2421;
+  color: #1f2421;
 }
 
 .logoifce {
@@ -67,7 +65,7 @@
 
   border-radius: 5px;
   border-style: solid;
-  border-color: #AFACAC;
+  border-color: #afacac;
 
   text-decoration: none;
   font-family: 'Roboto';
@@ -75,7 +73,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #AFACAC;
+  color: #afacac;
 }
 
 .button-CA {
@@ -85,7 +83,7 @@
   border-radius: 5px;
   height: 39px;
   width: 322px;
-  background: #0A5517;
+  background: #0a5517;
 
   border-radius: 5px;
   border-style: none;
@@ -95,7 +93,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .back-login {
   margin-left: 75px;
@@ -108,5 +106,5 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #1F2421;
+  color: #1f2421;
 }

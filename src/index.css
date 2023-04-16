@@ -1,5 +1,9 @@
-html, body{
-  font-family: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
@@ -8,9 +12,8 @@ html, body{
   height: 100vh;
 }
 
-
 .sidebar {
-  background-color: #0A5517;
+  background-color: #0a5517;
   width: 200px;
   height: 100%;
   position: fixed;

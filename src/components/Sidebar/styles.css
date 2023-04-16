@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 250px;
-  background-color: #0A5517;
+  width: 270px;
+  background-color: #0a5517;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
   transition: transform 0.3s ease-out;
@@ -56,3 +56,10 @@
   cursor: pointer;
   color: #333;
 }
+
+/*corrigir botões*/
+/*.sidebar-nav > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/

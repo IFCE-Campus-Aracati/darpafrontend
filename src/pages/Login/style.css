@@ -2,9 +2,8 @@
   position: absolute;
   width: 1920px;
   height: 1080px;
-  background: #0A5517;
+  background: #0a5517;
   display: flex;
-
 }
 
 .container-background-l2 {
@@ -12,8 +11,7 @@
   width: 960px;
   height: 1080px;
 
-
-  background: #46A151;
+  background: #46a151;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +24,7 @@
   height: 740px;
   left: 250px;
   top: 164px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 15px;
 
   display: flex;
@@ -51,7 +49,7 @@
   line-height: 42px;
   text-align: center;
 
-  color: #1F2421;
+  color: #1f2421;
 }
 
 .subtitle {
@@ -63,7 +61,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #0A5517;
+  color: #0a5517;
 }
 
 .inputEmail {
@@ -75,7 +73,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #1F2421;
+  color: #1f2421;
 }
 
 .inputEmail input {
@@ -87,7 +85,7 @@
   height: 39px;
   border-radius: 5px;
   border-style: solid;
-  border-color: #AFACAC;
+  border-color: #afacac;
 
   text-decoration: none;
   font-family: 'Roboto';
@@ -95,7 +93,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #AFACAC;
+  color: #afacac;
 }
 
 .inputSenha {
@@ -107,7 +105,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #1F2421;
+  color: #1f2421;
 }
 
 .inputSenha input {
@@ -118,10 +116,9 @@
   width: 322px;
   height: 39px;
 
-
   border-radius: 5px;
   border-style: solid;
-  border-color: #AFACAC;
+  border-color: #afacac;
 
   text-decoration: none;
   font-family: 'Roboto';
@@ -129,7 +126,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #AFACAC;
+  color: #afacac;
 }
 
 .button-login {
@@ -138,17 +135,17 @@
   border-radius: 5px;
   height: 39px;
   width: 322px;
-  background: #0A5517;
+  background: #0a5517;
 
   border-radius: 5px;
-  border-style:solid;
+  border-style: solid;
 
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .resetPassword {
@@ -156,7 +153,6 @@
 }
 
 .resetPassword a {
-
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -178,5 +174,5 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #1F2421;
+  color: #1f2421;
 }
