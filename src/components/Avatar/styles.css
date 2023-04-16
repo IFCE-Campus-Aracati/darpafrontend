@@ -1,18 +1,17 @@
 .avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: #46A151;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  
-  .avatar-letter {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    color: #FFF;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #46a151;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.avatar-letter {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+}
