@@ -5,14 +5,14 @@ import React, { useState } from 'react';
 import Avatar from '../Avatar';
 import Menu from '../Menu';
 import MenuButton from '../MenuButton';
-import Sidebar from '../Sidebar';
 
 interface HeaderProps {
   username: string;
   onLogout: () => void;
+  menuButtonAction: () => void; // hack para desacoplar a barra lateral
 }
 
-const Header: React.FC<HeaderProps> = ({ username, onLogout }) => {
+const Header: React.FC<HeaderProps> = ({ username, onLogout, menuButtonAction }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -22,6 +22,7 @@ const Header: React.FC<HeaderProps> = ({ username, onLogout }) => {
 
   const handleMenuButtonClick = () => {
     setIsSidebarOpen(!isSidebarOpen);
+    menuButtonAction();
   };
 
   return (
@@ -34,7 +35,6 @@ const Header: React.FC<HeaderProps> = ({ username, onLogout }) => {
         <Avatar username={username} onClick={handleAvatarClick} />
         {isMenuOpen && <Menu onLogout={onLogout} />}
       </div>
-      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
     </header>
   );
 };
