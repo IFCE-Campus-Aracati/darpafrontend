@@ -1,5 +1,7 @@
 import './styles.css';
 
+import { useState } from 'react';
+
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Pagination from '../../components/Pagination';
@@ -9,6 +11,12 @@ import Sidebar from '../../components/Sidebar';
 import SolicitationButton from '../../components/SolicitationButton';
 
 function UserHome() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSideBar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <>
       <Header
@@ -16,10 +24,11 @@ function UserHome() {
         onLogout={() => {
           throw new Error('Function not implemented.');
         }}
+        menuButtonAction={() => toggleSideBar()}
       />
       <div className="container">
         <Sidebar
-          isOpen={false}
+          isOpen={isSidebarOpen}
           onClose={function (): void {
             throw new Error('Function not implemented.');
           }}
