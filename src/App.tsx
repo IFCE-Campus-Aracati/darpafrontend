@@ -1,4 +1,3 @@
-import 'normalize.css';
 import './index.css';
 
 import InventoryPage from './pages/InventoryPage';
