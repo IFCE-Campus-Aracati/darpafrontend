@@ -10,7 +10,7 @@ interface LoginPgSet {
   onLogout: () => void;
 }
 
-const LoginForm: React.FC<LoginPgSet> = ({ onLogout }) => {
+const LoginForm: React.FC = ({  }) => {
   return (
     <div className="container-background-l1">
       <div className="logoifce">

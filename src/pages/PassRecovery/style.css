@@ -1,0 +1,133 @@
+.background {
+    display: flex;
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    overflow-y: scroll;
+    background: rgba(33, 33, 33, 0.6);
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 560px;
+    height: 253px;
+    left: 680px;
+    top: 414px;
+    background: #ffffff;
+    border-radius: 15px;
+}
+
+.box span {
+    position: absolute;
+    width: 406px;
+    height: 19px;
+    left: 77px;
+    top: 59px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    display: flex;
+    align-items: center;
+    color: rgba(10, 85, 23, 0.83);
+}
+
+.header {
+    align-items: center;
+    background: #0A5517;
+    width: 560px;
+    height: 39px;
+    border-top-right-radius: 14.5px;
+    border-top-left-radius: 14.5px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.header img{
+    margin-top: 10px;
+    margin-left: 526px;
+}
+
+.header header {
+    position: absolute;
+    width: 300px;
+    height: 19px;
+    left: 146px;
+    top: 10px;
+}
+
+.input-background {
+
+    position: absolute;
+    width: 477px;
+    height: 53px;
+    left: 41px;
+    top: 98px;
+
+    background: rgba(129, 129, 129, 0.30);
+    border-radius: 10px;
+}
+
+.input-email {
+    margin-top: 7px;
+    margin-left: 27px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: rgba(0, 0, 0, 0.57);
+}
+
+.input-email input {
+
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: flex-start;
+    width: 425px;
+    height: 27px;
+    padding-left: 11px;
+
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #AFACAC;
+
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #AFACAC;
+}
+
+.button-confirm {
+    margin-top: 141px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    height: 31px;
+    width: 199px;
+    background: #0a5517;
+
+    border-radius: 5px;
+    border-style: solid;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+}
