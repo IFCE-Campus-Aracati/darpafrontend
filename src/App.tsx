@@ -1,11 +1,11 @@
 import './index.css';
 
-import UserHome from './pages/UserHome';
+import InventoryPage from './pages/InventoryPage';
 
 function App() {
   return (
     <>
-      <UserHome />
+      <InventoryPage />
     </>
   );
 }

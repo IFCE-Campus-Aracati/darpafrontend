@@ -5,13 +5,13 @@ import { useState } from 'react';
 import userProfileImg from '../../assets/Vector.svg';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
+import InventoryTable from '../../components/InventoryTable';
 import Pagination from '../../components/Pagination';
-import PrintRequestsTable from '../../components/PrintTable';
+import RegisterProductButton from '../../components/RegisterProductButton';
 import SearchBar from '../../components/SearchBar';
 import Sidebar from '../../components/Sidebar';
-import SolicitationButton from '../../components/SolicitationButton';
 
-function UserHome() {
+function InventoryPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSideBar = () => {
@@ -33,29 +33,28 @@ function UserHome() {
           onClose={function (): void {
             throw new Error('Function not implemented.');
           }}
+          isADM={true}
           user={{
-            name: 'Reperkilson',
+            name: 'Umar Azis',
             photo: userProfileImg,
-            qualification: 'Aluno, Bolsista',
+            qualification: 'Professor, Administrador',
           }}
-          isADM={false}
         />
-        <div className="page-title">Minhas solicitações</div>
         <div className="buttons">
           <SearchBar
             onSearch={function (term: string): void {
               throw new Error('Function not implemented.');
             }}
-            placeholder={'Buscar'}
+            placeholder={'Buscar Produto'}
           />
-          <SolicitationButton
+          <RegisterProductButton
             onClick={function (): void {
               throw new Error('Function not implemented.');
             }}
           />
         </div>
         <div className="data-table">
-          <PrintRequestsTable />
+          <InventoryTable />
           <Pagination
             totalItems={10}
             itemsPerPage={5}
@@ -71,4 +70,4 @@ function UserHome() {
   );
 }
 
-export default UserHome;
+export default InventoryPage;
