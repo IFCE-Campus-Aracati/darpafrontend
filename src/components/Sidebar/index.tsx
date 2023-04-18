@@ -6,12 +6,17 @@ import SidebarButton from '../SidebarButton';
 import UserProfile from '../UserProfile';
 
 interface SidebarProps {
+  user: {
+    name: string;
+    photo: string;
+    qualification: string;
+  };
   isOpen: boolean;
   isADM: boolean;
   onClose: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isADM, isOpen, onClose }) => {
+const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen, onClose }) => {
   const handleLinkClick = () => {
     onClose();
   };
@@ -19,7 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isADM, isOpen, onClose }) => {
   return (
     <div className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
       <nav className="sidebar-nav">
-        <UserProfile />
+        <UserProfile user={user} />
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Minhas solicitações"

@@ -2,6 +2,7 @@ import './styles.css';
 
 import { useState } from 'react';
 
+import userProfileImg from '../../assets/Vector.svg';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Pagination from '../../components/Pagination';
@@ -32,6 +33,12 @@ function UserHome() {
           onClose={function (): void {
             throw new Error('Function not implemented.');
           }}
+          user={{
+            name: 'Reperkilson',
+            photo: userProfileImg,
+            qualification: 'Aluno, Bolsista',
+          }}
+          isADM={false}
         />
         <div className="page-title">Minhas solicitações</div>
         <div className="buttons">
@@ -39,6 +46,7 @@ function UserHome() {
             onSearch={function (term: string): void {
               throw new Error('Function not implemented.');
             }}
+            placeholder={'Buscar'}
           />
           <SolicitationButton
             onClick={function (): void {

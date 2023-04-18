@@ -4,10 +4,11 @@ import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 
 interface Props {
+  placeholder: string;
   onSearch: (term: string) => void;
 }
 
-const SearchBar: React.FC<Props> = ({ onSearch }) => {
+const SearchBar: React.FC<Props> = ({ placeholder, onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +21,7 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
       <FiSearch className="search-icon" />
       <input
         type="text"
-        placeholder="Buscar"
+        placeholder={placeholder}
         value={searchTerm}
         onChange={handleInputChange}
         className="search-input"

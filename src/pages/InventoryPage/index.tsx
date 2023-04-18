@@ -2,6 +2,7 @@ import './styles.css';
 
 import { useState } from 'react';
 
+import userProfileImg from '../../assets/Vector.svg';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import InventoryTable from '../../components/InventoryTable';
@@ -33,12 +34,18 @@ function InventoryPage() {
             throw new Error('Function not implemented.');
           }}
           isADM={true}
+          user={{
+            name: 'Umar Azis',
+            photo: userProfileImg,
+            qualification: 'Professor, Administrador',
+          }}
         />
         <div className="buttons">
           <SearchBar
             onSearch={function (term: string): void {
               throw new Error('Function not implemented.');
             }}
+            placeholder={'Buscar Produto'}
           />
           <RegisterProductButton
             onClick={function (): void {
