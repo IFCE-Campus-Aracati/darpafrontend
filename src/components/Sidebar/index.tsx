@@ -60,13 +60,13 @@ const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen, onClose }) => {
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Estoques"
-              isSelected={true}
+              isSelected={false}
               onClick={handleLinkClick}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Impressoras"
-              isSelected={false}
+              isSelected={true}
               onClick={handleLinkClick}
             />
           </>

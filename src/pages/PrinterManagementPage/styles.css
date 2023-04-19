@@ -1,0 +1,47 @@
+.buttons {
+    width: 80%;
+    margin-top: 100px;
+    margin-bottom: 15px;
+    align-self: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .data-table {
+    align-self: center;
+    width: 80%;
+    padding: 10px;
+  }
+  
+  .sidebar {
+    background-color: #0a5517;
+    width: 270px;
+    height: 100%;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    transform: translateX(-100%);
+    padding-top: 10px;
+    z-index: 1;
+  }
+  
+  .sidebar-open {
+    left: 270px;
+  }
+  
+  .page-title {
+    width: 362;
+    height: 49;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    font-style: Bold;
+    margin-left: 300px;
+    margin-top: 80px;
+  }
+  

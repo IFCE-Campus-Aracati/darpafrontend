@@ -1,11 +1,11 @@
 import './index.css';
 
-import InventoryPage from './pages/InventoryPage';
+import PrinterManagementPage from './pages/PrinterManagementPage';
 
 function App() {
   return (
     <>
-      <InventoryPage />
+      <PrinterManagementPage />
     </>
   );
 }
