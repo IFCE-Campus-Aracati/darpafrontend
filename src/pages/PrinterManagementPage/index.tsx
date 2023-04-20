@@ -6,12 +6,13 @@ import userProfileImg from '../../assets/Vector.svg';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Pagination from '../../components/Pagination';
+import PrinterDropdown from '../../components/PrinterDropdown';
 import PrinterTable from '../../components/PrinterTable';
 import Sidebar from '../../components/Sidebar';
 
 function PrinterManagementPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  const printers = ['Impressora 1', 'Impressora 2', 'Impressora 3'];
   const toggleSideBar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -38,8 +39,10 @@ function PrinterManagementPage() {
           }}
           isADM={true}
         />
-        <div className="page-title">Impressoras</div>
-
+        <div className="page-title">
+          Impressoras
+          <PrinterDropdown printers={printers} />
+        </div>
         <div className="data-table">
           <PrinterTable />
           <Pagination

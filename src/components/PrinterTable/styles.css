@@ -18,22 +18,6 @@ td {
   text-align: center;
 }
 
-.aprovado {
-  color: #8ec63f;
-}
-
-.pendente {
-  color: #efa300;
-}
-
-.reprovado {
-  color: #b94a48;
-}
-
-.concluido {
-  color: #0038ff;
-}
-
 .action-buttons {
   display: flex;
   justify-content: center;
