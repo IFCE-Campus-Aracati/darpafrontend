@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ username, onLogout, menuButtonAction })
         <img src="src\assets\img\logoifce.png" alt="Logo ifce" className="logo" />
       </div>
       <div className="header-right">
-        <Avatar username={username} onClick={handleAvatarClick} />
+        <Avatar username={username} clickAction={handleAvatarClick} />
         {isMenuOpen && <Menu onLogout={onLogout} />}
       </div>
     </header>

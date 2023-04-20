@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto&display=swap');
 
+:root {
+  --clr-green-1: #0a5517;
+  --clr-green-2: #19882c;
+  --clr-green-3: #46a151;
+  --clr-green-4: #8ec63f;
+
+  --clr-black: #1f2421;
+  --clr-white: #ffffff;
+  --clr-grey: #afacac;
+
+  --clr-yellow: #efa300;
+  --clr-red-1: #b94a48;
+  --clr-red-2: #f2dede;
+
+  --clr-blue: #0038ff;
+}
+
 * {
   margin: 0;
   padding: 0;
