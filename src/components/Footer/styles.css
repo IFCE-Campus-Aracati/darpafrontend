@@ -1,74 +1,58 @@
 .footer {
-  margin-top: -35px;
+  min-width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-green-1);
+}
+
+.links {
+  width: 100%;
   height: 100%;
-  background-color: #0a5517;
-  color: #fff;
-  padding: 30px 30px;
-  z-index: -1;
-}
-
-.footer-wrapper {
+  margin: 10px 0;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 30%;
-  padding: 0 15px;
-  position: relative;
+.footer-link-section {
+  align-self: flex-start;
+  min-width: 200px;
+  margin: 10px;
+  padding: 0 5px;
+  border-left: 3px solid var(--clr-yellow);
 }
 
-.column-title {
+.footer-link-section-title {
+  margin-left: 10px;
+  margin-bottom: 10px;
   font-size: 1.2rem;
   font-weight: regular;
-  font-family: 'Roboto', sans-serif;
-  color: #46a151;
-  margin-bottom: 15px;
-  position: relative;
-  text-align: left;
+  color: var(--clr-green-3);
 }
 
-.column-list {
+.footer-link-section-links {
   list-style: none;
-  margin: 0;
-  padding: 8px;
+  padding-left: 8px;
 }
 
-.column-list::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -10px;
-  width: 3px;
-  height: 95%;
-  background-color: #efa300;
+.footer-link-section-links li {
+  margin-top: 5px;
 }
 
-.column-list li {
-  font-size: 1.5rem;
-  font-weight: regular;
-  font-family: 'Roboto', sans-serif;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-.column-list li:last-child {
-  margin-bottom: 10px;
-}
-
-.column-list li a {
-  color: #fff;
+.footer-link-section-links a {
   font-size: 0.9rem;
-  text-decoration: none;
   text-align: left;
+  text-decoration: none;
+  color: var(--clr-white);
 }
 
-.column-list li a:hover {
-  text-decoration: underline;
+@media (max-width: 768px) {
+  .links {
+    flex-direction: column;
+  }
+
+  .footer-link-section {
+    align-self: center;
+  }
 }
