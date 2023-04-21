@@ -21,27 +21,5 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.sidebar {
-  background-color: #0a5517;
-  width: 200px;
-  height: 100%;
-  position: fixed;
-  top: 64px;
-  left: 0;
-  overflow-x: hidden;
-  transition: 0.5s;
-  transform: translateX(-100%);
-  padding-top: 10px;
-}
-
-.sidebar-open {
-  left: 200px;
+  font-family: Roboto, serif;
 }
