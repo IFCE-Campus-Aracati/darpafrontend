@@ -33,6 +33,9 @@ const printRequests: InventoryTableProps = {
 function InventoryPage() {
   return (
     <DefaultPage>
+      <section className="inventory-page-title">
+        <h1>Estoque de produtos</h1>
+      </section>
       <section className="inventory-page-content-actions">
         <SearchBar
           onSearch={(term) => console.log(term)}
