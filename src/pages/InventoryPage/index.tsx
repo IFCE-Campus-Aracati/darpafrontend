@@ -33,7 +33,7 @@ const printRequests: InventoryTableProps = {
 function InventoryPage() {
   return (
     <DefaultPage>
-      <section className="page-content-actions">
+      <section className="inventory-page-content-actions">
         <SearchBar
           onSearch={(term) => console.log(term)}
           placeholder={'Buscar Produto'}
