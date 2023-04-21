@@ -1,24 +1,58 @@
-table {
-  font-family: 'Roboto', sans-serif;
+.requests-table {
+  width: 1000px;
   border-collapse: collapse;
-  width: 100%;
 }
 
-th {
+.requests-table-head th {
+  padding: 15px 0;
+  font-size: large;
   font-weight: bold;
   text-align: center;
-  padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+.requests-table-body td {
+  color: var(--clr-black);
+  padding: 5px 10px;
 }
 
-td {
+.requests-table-body tr:nth-child(odd) {
+  background-color: rgba(175, 172, 172, 0.2);
+}
+
+.id {
+  width: 70px;
+}
+
+.id,
+.date,
+.status,
+.edit-button {
   text-align: center;
 }
 
-.aprovado {
+.product,
+.description {
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.icon-button {
+  scale: 0.7;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-button:hover {
+  cursor: pointer;
+}
+
+/* .aprovado {
   color: #8ec63f;
 }
 
@@ -32,19 +66,4 @@ td {
 
 .concluido {
   color: #0038ff;
-}
-
-.action-buttons {
-  display: flex;
-  justify-content: center;
-}
-
-.icon-button {
-  scale: 0.7;
-  background-color: transparent;
-  border: none;
-}
-
-.icon-button:hover {
-  cursor: pointer;
-}
+} */
