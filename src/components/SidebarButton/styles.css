@@ -23,11 +23,11 @@
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: rgba(175, 172, 172, .2);
+  background-color: rgba(175, 172, 172, 0.2);
 }
 
 .sidebar-button:hover {
-  background-color: rgba(175, 172, 172, .2);
+  background-color: rgba(175, 172, 172, 0.2);
 }
 
 .sidebar-button-icon {
