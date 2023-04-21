@@ -43,9 +43,13 @@ const footerSections: FooterSection[] = [
   },
 ];
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  style?: React.CSSProperties;
+}
+
+const Footer: React.FC<FooterProps> = ({ style }) => {
   return (
-    <footer className="footer">
+    <footer className="footer" style={style}>
       <section className="links">
         {footerSections.map((footerSection) => (
           <section className="footer-link-section" key={footerSection.title}>
