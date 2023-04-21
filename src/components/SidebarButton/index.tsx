@@ -6,33 +6,33 @@ interface SidebarButtonProps {
   icon: string;
   label: string;
   isSelected: boolean;
-  onClick: () => void;
+  sidebarButtonOnClick: () => void;
 }
 
 const SidebarButton: React.FC<SidebarButtonProps> = ({
   icon,
   label,
   isSelected,
-  onClick,
+  sidebarButtonOnClick,
 }) => {
   return (
     <button
-      className={`sidebar-button ${isSelected ? 'selected' : ''}`}
-      onClick={onClick}
+      className={isSelected ? 'sidebar-button-selected' : 'sidebar-button'}
+      onClick={sidebarButtonOnClick}
     >
-      <div className="sidebar-button-icon">
-        <img src={icon} alt="Page icon" />
-      </div>
-      <div className="sidebar-button-label">
-        <span>{label}</span>
-        {isSelected ? null : (
-          <img
-            className="sidebar-button-arrow"
-            src="src\assets\arrow.svg"
-            alt="Arrow icon"
-          />
-        )}
-      </div>
+      <img className="sidebar-button-icon" src={icon} alt="Page icon" />
+      <p
+        className={isSelected ? 'sidebar-button-label-selected' : 'sidebar-button-label'}
+      >
+        {label}
+      </p>
+      {isSelected ? null : (
+        <img
+          className="sidebar-button-arrow"
+          src="src\assets\arrow.svg"
+          alt="Arrow icon"
+        />
+      )}
     </button>
   );
 };
