@@ -11,37 +11,32 @@ interface SidebarProps {
     photo: string;
     qualification: string;
   };
-  isOpen: boolean;
   isADM: boolean;
-  onClose: () => void;
+  isOpen: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen, onClose }) => {
-  const handleLinkClick = () => {
-    onClose();
-  };
-
+const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen }) => {
   return (
-    <div className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
+    <section className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
+      <UserProfile user={user} />
       <nav className="sidebar-nav">
-        <UserProfile user={user} />
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Minhas solicitações"
           isSelected={false}
-          onClick={handleLinkClick}
+          sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
         />
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Alterar senha"
           isSelected={false}
-          onClick={handleLinkClick}
+          sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
         />
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Editar perfil"
           isSelected={false}
-          onClick={handleLinkClick}
+          sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
         />
         {isADM && (
           <>
@@ -49,30 +44,30 @@ const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen, onClose }) => {
               icon="src\assets\option-icon.svg"
               label="Contas"
               isSelected={false}
-              onClick={handleLinkClick}
+              sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Agendamentos"
               isSelected={false}
-              onClick={handleLinkClick}
+              sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Estoques"
               isSelected={true}
-              onClick={handleLinkClick}
+              sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Impressoras"
               isSelected={false}
-              onClick={handleLinkClick}
+              sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
             />
           </>
         )}
       </nav>
-    </div>
+    </section>
   );
 };
 
