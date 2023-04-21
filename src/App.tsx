@@ -3,11 +3,7 @@ import './index.css';
 import InventoryPage from './pages/InventoryPage';
 
 function App() {
-  return (
-    <>
-      <InventoryPage />
-    </>
-  );
+  return <InventoryPage />;
 }
 
 export default App;
