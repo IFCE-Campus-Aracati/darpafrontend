@@ -76,6 +76,8 @@
 
 .login-form-reset-password-link {
   align-self: flex-end;
+  text-align: end;
+  width: 100%;
   padding: 0 70px;
   margin-top: 10px;
 }
@@ -87,6 +89,8 @@
 
 .login-sign-up-link {
   align-self: flex-start;
+  text-align: start;
+  width: 100%;
   padding: 0 70px;
   margin-top: 80px;
   font-size: 0.9rem;
