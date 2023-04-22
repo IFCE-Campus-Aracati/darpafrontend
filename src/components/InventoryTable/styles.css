@@ -1,50 +1,50 @@
-table {
-  font-family: 'Roboto', sans-serif;
+.inventory-table {
+  width: 1000px;
   border-collapse: collapse;
-  width: 100%;
 }
 
-th {
+.inventory-table-head th {
+  padding: 15px 0;
+  font-size: large;
   font-weight: bold;
   text-align: center;
-  padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+.inventory-table-body td {
+  color: var(--clr-black);
+  padding: 5px 10px;
 }
 
-td {
+.inventory-table-body tr:nth-child(odd) {
+  background-color: rgba(175, 172, 172, 0.2);
+}
+
+.id {
+  width: 70px;
+}
+
+.id,
+.amount,
+.edit-button {
   text-align: center;
 }
 
-.aprovado {
-  color: #8ec63f;
+.product {
+  max-width: 150px;
 }
 
-.pendente {
-  color: #efa300;
+.description {
+  width: 550px;
 }
 
-.reprovado {
-  color: #b94a48;
-}
-
-.concluido {
-  color: #0038ff;
-}
-
-.action-buttons {
-  display: flex;
-  justify-content: center;
+.product,
+.description {
+  text-align: left;
+  word-wrap: break-word;
 }
 
 .icon-button {
   scale: 0.7;
-  background-color: transparent;
   border: none;
-}
-
-.icon-button:hover {
   cursor: pointer;
 }

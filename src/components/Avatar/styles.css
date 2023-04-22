@@ -5,13 +5,15 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #46a151;
-  font-size: 14px;
+  background-color: var(--clr-green-3);
   font-weight: 500;
+  border: none;
+  cursor: pointer;
 }
 
 .avatar-letter {
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, serif;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--clr-white);
+  font-size: 1.1rem;
 }

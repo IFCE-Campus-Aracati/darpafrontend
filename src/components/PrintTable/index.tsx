@@ -2,78 +2,64 @@ import './styles.css';
 
 import React from 'react';
 
-function PrintRequestsTable() {
-  // Dados mocados das solicitações de impressão
-  const printRequests = [
-    {
-      id: 1,
-      name: 'Action Figure',
-      date: '01/04/2022',
-      type: 'Impressão 3D',
-      description: 'Impressão em Abs preto',
-      status: 'Pendente',
-    },
-    {
-      id: 2,
-      name: 'Trófeu',
-      date: '03/04/2022',
-      type: 'Corte a Laser',
-      description: 'Corte em MDF 3mm',
-      status: 'Aprovado',
-    },
-    {
-      id: 3,
-      name: 'Miniatura Bolsonaro',
-      date: '05/04/2022',
-      type: 'Impressão 3D',
-      description: 'Busto do mito em PLA vermelho',
-      status: 'Reprovado',
-    },
-    {
-      id: 4,
-      name: 'Miniatura Lula',
-      date: '07/04/2022',
-      type: 'Impressão 3D',
-      description: 'Busto do Lula em PLA Azul',
-      status: 'Concluido',
-    },
-  ];
+export interface PrintRequestsTableDataProps {
+  id: number;
+  name: string;
+  date: Date;
+  type: string;
+  description: string;
+  status: 'APROVADO' | 'REPROVADO' | 'CONCLUIDO' | 'PENDENTE';
+}
+
+export interface PrintRequestsTableProps {
+  header: string[];
+  data: PrintRequestsTableDataProps[];
+}
+
+const PrintRequestsTable: React.FC<PrintRequestsTableProps> = ({ header, data }) => {
+  const parseDate = (date: Date): string => {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear().toString();
+    return `${day}/${month}/${year}`;
+  };
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Data</th>
-          <th>Tipo</th>
-          <th>Descrição</th>
-          <th>Status</th>
-          <th>Ação</th>
-        </tr>
-      </thead>
-      <tbody>
-        {printRequests.map((request) => (
-          <tr key={request.id}>
-            <td>{request.id}</td>
-            <td>{request.name}</td>
-            <td>{request.date}</td>
-            <td>{request.type}</td>
-            <td>{request.description}</td>
-            <td className={request.status.toLowerCase()}>{request.status}</td>
-            <td className="action-buttons">
-              <button className="icon-button">
-                <img src="src\assets\iconmonstr-pencil-10 1.svg" alt=""></img>
-              </button>
-              <button className="icon-button">
-                <img src="src\assets\trash 1.svg" alt=""></img>
-              </button>
-            </td>
+    <section className="requests-table-section">
+      <table className="requests-table">
+        <thead className="requests-table-head">
+          <tr>
+            {header.map((columnTitle) => (
+              <th key={columnTitle}>{columnTitle}</th>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody className="requests-table-body">
+          {data.map((tableRow) => (
+            <tr key={tableRow.id}>
+              <td className="id">{tableRow.id}</td>
+              <td className="name">{tableRow.name}</td>
+              <td className="date">{parseDate(tableRow.date)}</td>
+              <td className="type">{tableRow.type}</td>
+              <td className="description">{tableRow.description}</td>
+              {/* TODO: criar botões especificos para cada status */}
+              <td className={`status ${tableRow.status.toLowerCase()}`}>
+                {tableRow.status}
+              </td>
+              <td className="action-buttons">
+                <button className="icon-button">
+                  <img src="src\assets\iconmonstr-pencil-10 1.svg" alt=""></img>
+                </button>
+                <button className="icon-button">
+                  <img src="src\assets\trash 1.svg" alt=""></img>
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
   );
-}
+};
 
 export default PrintRequestsTable;
