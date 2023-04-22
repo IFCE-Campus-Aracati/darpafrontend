@@ -1,0 +1,118 @@
+.sign-up-form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-green-3);
+}
+
+.sign-up-form {
+  min-width: 460px;
+  min-height: 740px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: var(--clr-white);
+}
+
+.sign-up-form-title {
+  width: 100%;
+  padding: 50px 0 50px 70px;
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--clr-black);
+}
+
+.sign-up-form-name-input,
+.sign-up-form-email-input,
+.sign-up-form-password-input,
+.sign-up-form-password-confirmation-input {
+  padding: 0 0 20px 0;
+  font-size: 1rem;
+}
+
+.sign-up-form-name-input input,
+.sign-up-form-email-input input,
+.sign-up-form-password-input input,
+.sign-up-form-password-confirmation-input input {
+  width: 322px;
+  height: 39px;
+  margin-top: 5px;
+  padding: 0 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: var(--clr-grey);
+}
+
+.sign-up-form-name-input input::placeholder,
+.sign-up-form-email-input input::placeholder,
+.sign-up-form-password-input input::placeholder,
+.sign-up-form-password-confirmation-input input::placeholder {
+  color: var(--clr-grey);
+}
+
+.sign-up-form-name-input input:focus,
+.sign-up-form-email-input input:focus,
+.sign-up-form-password-input input:focus,
+.sign-up-form-password-confirmation-input input:focus {
+  color: var(--clr-black);
+}
+
+.sign-up-form-submit-button {
+  width: 322px;
+  height: 39px;
+  margin-top: 40px;
+  font-size: 1.1rem;
+  color: var(--clr-white);
+  border-radius: 5px;
+  border-style: solid;
+  border-color: var(--clr-green-1);
+  background: var(--clr-green-1);
+}
+
+.sign-up-form-sign-in-link {
+  align-self: flex-start;
+  padding: 0 70px;
+  margin-top: 80px;
+  font-size: 0.9rem;
+  color: var(--clr-black);
+}
+
+.sign-up-form-sign-in-link a {
+  font-size: 0.9rem;
+  color: var(--clr-yellow);
+}
+
+@media (max-width: 768px) {
+  .sign-up-form {
+    min-width: 320px;
+    min-height: 500px;
+  }
+
+  .sign-up-form-title {
+    padding: 40px 0 40px 25px;
+    font-size: 1.5rem;
+  }
+
+  .sign-up-form-name-input input,
+  .sign-up-form-email-input input,
+  .sign-up-form-password-input input,
+  .sign-up-form-password-confirmation-input input {
+    width: 280px;
+  }
+
+  .sign-up-form-submit-button {
+    width: 280px;
+    margin-top: 30px;
+    font-size: 1rem;
+  }
+
+  .sign-up-form-sign-in-link {
+    padding: 0 20px;
+    margin: 50px 0 30px 0;
+  }
+}
