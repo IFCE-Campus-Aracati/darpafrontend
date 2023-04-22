@@ -19,7 +19,7 @@
   max-width: 80%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .sign-up-image-container {
     display: none;
   }
