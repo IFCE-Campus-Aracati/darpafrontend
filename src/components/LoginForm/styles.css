@@ -1,0 +1,137 @@
+.login-form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-green-3);
+}
+
+.login-form {
+  min-width: 460px;
+  min-height: 740px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: var(--clr-white);
+}
+
+.login-form-title {
+  width: 100%;
+  padding: 50px 0 15px 70px;
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--clr-black);
+}
+
+.login-form-subtitle {
+  width: 100%;
+  padding: 0 0 50px 70px;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--clr-green-1);
+}
+
+.login-form-email-input,
+.login-form-password-input {
+  padding: 0 0 20px 0;
+  font-size: 1rem;
+}
+
+.login-form-email-input input,
+.login-form-password-input input {
+  width: 322px;
+  height: 39px;
+  margin-top: 5px;
+  padding: 0 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: var(--clr-grey);
+}
+
+.login-form-email-input input::placeholder,
+.login-form-password-input input::placeholder {
+  color: var(--clr-grey);
+}
+
+.login-form-email-input input:focus,
+.login-form-password-input input:focus {
+  color: var(--clr-black);
+}
+
+.login-form-submit-button {
+  width: 322px;
+  height: 39px;
+  margin-top: 40px;
+  font-size: 1.1rem;
+  color: var(--clr-white);
+  border-radius: 5px;
+  border-style: solid;
+  border-color: var(--clr-green-1);
+  background: var(--clr-green-1);
+}
+
+.login-form-reset-password-link {
+  align-self: flex-end;
+  padding: 0 70px;
+  margin-top: 10px;
+}
+
+.login-form-reset-password-link a {
+  font-size: 0.9rem;
+  color: var(--clr-yellow);
+}
+
+.login-sign-up-link {
+  align-self: flex-start;
+  padding: 0 70px;
+  margin-top: 80px;
+  font-size: 0.9rem;
+  color: var(--clr-black);
+}
+
+.login-sign-up-link a {
+  font-size: 0.9rem;
+  color: var(--clr-yellow);
+}
+
+@media (max-width: 768px) {
+  .login-form {
+    min-width: 320px;
+    min-height: 500px;
+  }
+
+  .login-form-title {
+    padding: 40px 0 10px 25px;
+    font-size: 1.5rem;
+  }
+
+  .login-form-subtitle {
+    padding: 0 0 30px 20px;
+    font-size: 0.9rem;
+  }
+
+  .login-form-email-input input,
+  .login-form-password-input input {
+    width: 280px;
+  }
+
+  .login-form-submit-button {
+    width: 280px;
+    margin-top: 30px;
+    font-size: 1rem;
+  }
+
+  .login-form-reset-password-link {
+    padding: 0 20px;
+    margin-top: 5px;
+  }
+
+  .login-sign-up-link {
+    padding: 0 20px;
+    margin-top: 60px;
+  }
+}
