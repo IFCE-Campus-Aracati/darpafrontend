@@ -9,37 +9,15 @@ import Pagination from '../../components/Pagination';
 import PrinterDropdown from '../../components/PrinterDropdown';
 import PrinterTable from '../../components/PrinterTable';
 import Sidebar from '../../components/Sidebar';
+import DefaultPage from '../../components/DefaultPage';
 
 function PrinterManagementPage() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const printers = ['Impressora 1', 'Impressora 2', 'Impressora 3'];
-  const toggleSideBar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+
 
   return (
-    <>
-      <Header
-        username="User"
-        onLogout={() => {
-          throw new Error('Function not implemented.');
-        }}
-        menuButtonAction={() => toggleSideBar()}
-      />
-      <div className="container">
-        <Sidebar
-          isOpen={isSidebarOpen}
-          onClose={function (): void {
-            throw new Error('Function not implemented.');
-          }}
-          user={{
-            name: 'Umar Azis',
-            photo: userProfileImg,
-            qualification: 'Professor, Administrador',
-          }}
-          isADM={true}
-        />
-        <div className="page-title">
+    <DefaultPage>
+       <div className="page-title">
           Impressoras
           <PrinterDropdown printers={printers} />
         </div>
@@ -54,9 +32,7 @@ function PrinterManagementPage() {
             }}
           />
         </div>
-      </div>
-      <Footer />
-    </>
+    </DefaultPage>
   );
 }
 
