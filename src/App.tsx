@@ -1,9 +1,9 @@
 import './index.css';
 
-import InventoryPage from './pages/InventoryPage';
+import LoginPage from './pages/Login';
 
 function App() {
-  return <InventoryPage />;
+  return <LoginPage />;
 }
 
 export default App;
