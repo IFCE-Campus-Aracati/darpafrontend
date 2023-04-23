@@ -23,9 +23,9 @@ const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen }) => {
   };
 
   return (
-    <section className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
+    <section className={`default-sidebar ${isOpen ? 'default-sidebar-open' : ''}`}>
       <UserProfile user={user} />
-      <nav className="sidebar-nav">
+      <nav className="default-sidebar-nav">
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Minhas solicitações"
