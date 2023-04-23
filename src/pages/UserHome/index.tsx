@@ -2,11 +2,13 @@ import './styles.css';
 
 import DefaultPage from '../../components/DefaultPage';
 import Pagination from '../../components/Pagination';
-import PrintRequestsTable, { PrintRequestsTableProps } from '../../components/PrintTable';
 import SearchBar from '../../components/SearchBar';
 import SolicitationButton from '../../components/SolicitationButton';
+import UserRequestsTable, {
+  UserRequestsTableProps,
+} from '../../components/UserRequestsTable';
 
-const printRequests: PrintRequestsTableProps = {
+const printRequests: UserRequestsTableProps = {
   header: ['ID', 'Nome', 'Data', 'Tipo', 'Descrição', 'Status', 'Ação'],
   data: [
     {
@@ -58,7 +60,7 @@ function UserHome() {
         />
         <SolicitationButton onClick={() => console.log('SolicitationButton')} />
       </section>
-      <PrintRequestsTable header={printRequests.header} data={printRequests.data} />
+      <UserRequestsTable header={printRequests.header} data={printRequests.data} />
       <Pagination
         totalItems={10}
         itemsPerPage={5}
