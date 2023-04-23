@@ -42,6 +42,7 @@
   font-size: 1rem;
   text-align: start;
   color: var(--clr-white);
+  text-decoration: none;
 }
 
 .sidebar-button-label-selected {
@@ -51,6 +52,7 @@
   font-size: 1rem;
   text-align: start;
   color: var(--clr-yellow);
+  text-decoration: none;
 }
 
 .sidebar-button-arrow {

@@ -1,13 +1,9 @@
 import './index.css';
 
-import PrinterManagementPage from './pages/PrinterManagementPage';
+import AppRoutes from './routes';
 
 function App() {
-  return (
-    <>
-      <PrinterManagementPage />
-    </>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

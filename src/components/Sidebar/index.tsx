@@ -31,18 +31,21 @@ const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen }) => {
           label="Minhas solicitações"
           isSelected={selectedButton === 'Minhas solicitações'}
           sidebarButtonOnClick={() => handleButtonClick('Minhas solicitações')}
+          navigateTo={'/'}
         />
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Alterar senha"
           isSelected={selectedButton === 'Alterar senha'}
           sidebarButtonOnClick={() => handleButtonClick('Alterar senha')}
+          navigateTo={'/alterar-senha'}
         />
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Editar perfil"
           isSelected={selectedButton === 'Editar perfil'}
           sidebarButtonOnClick={() => handleButtonClick('Editar perfil')}
+          navigateTo={'/editar-perfil'}
         />
         {isADM && (
           <>
@@ -51,24 +54,28 @@ const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen }) => {
               label="Contas"
               isSelected={selectedButton === 'Contas'}
               sidebarButtonOnClick={() => handleButtonClick('Contas')}
+              navigateTo={'/usuarios'}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Agendamentos"
               isSelected={selectedButton === 'Agendamentos'}
               sidebarButtonOnClick={() => handleButtonClick('Agendamentos')}
+              navigateTo={'/agendamentos'}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Estoques"
               isSelected={selectedButton === 'Estoques'}
               sidebarButtonOnClick={() => handleButtonClick('Estoques')}
+              navigateTo={'/estoque'}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Impressoras"
               isSelected={selectedButton === 'Impressoras'}
               sidebarButtonOnClick={() => handleButtonClick('Impressoras')}
+              navigateTo={'/impressoras'}
             />
           </>
         )}
