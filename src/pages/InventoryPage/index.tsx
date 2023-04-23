@@ -1,72 +1,59 @@
 import './styles.css';
 
-import { useState } from 'react';
-
-import userProfileImg from '../../assets/Vector.svg';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import InventoryTable from '../../components/InventoryTable';
+import DefaultPage from '../../components/DefaultPage';
+import InventoryTable, { InventoryTableProps } from '../../components/InventoryTable';
 import Pagination from '../../components/Pagination';
 import RegisterProductButton from '../../components/RegisterProductButton';
 import SearchBar from '../../components/SearchBar';
-import Sidebar from '../../components/Sidebar';
+
+const printRequests: InventoryTableProps = {
+  header: ['ID', 'Produto', 'Descrição', 'Estoque'],
+  data: [
+    {
+      id: 1,
+      product: 'Filamento ABS',
+      description: 'Filamento ABS Premium para impressora 3D 500g 1,7mm (Branco Gesso)',
+      amount: 10,
+    },
+    {
+      id: 2,
+      product: 'Filamento PLA',
+      description: 'Filamento PLA Premium para Impressora 3D 1,75mm 1kg(Preto)',
+      amount: 10,
+    },
+    {
+      id: 3,
+      product: 'Placa MDF',
+      description: 'MDF cru 3mm (verde)',
+      amount: 10,
+    },
+  ],
+};
 
 function InventoryPage() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSideBar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
   return (
-    <>
-      <Header
-        username="User"
-        onLogout={() => {
-          throw new Error('Function not implemented.');
-        }}
-        menuButtonAction={() => toggleSideBar()}
-      />
-      <div className="container">
-        <Sidebar
-          isOpen={isSidebarOpen}
-          onClose={function (): void {
-            throw new Error('Function not implemented.');
-          }}
-          isADM={true}
-          user={{
-            name: 'Umar Azis',
-            photo: userProfileImg,
-            qualification: 'Professor, Administrador',
-          }}
+    <DefaultPage>
+      <section className="inventory-page-title">
+        <h1>Estoque de produtos</h1>
+      </section>
+      <section className="inventory-page-content-actions">
+        <SearchBar
+          onSearch={(term) => console.log(term)}
+          placeholder={'Buscar Produto'}
+          wsize={400}
         />
-        <div className="buttons">
-          <SearchBar
-            onSearch={function (term: string): void {
-              throw new Error('Function not implemented.');
-            }}
-            placeholder={'Buscar Produto'}
-          />
-          <RegisterProductButton
-            onClick={function (): void {
-              throw new Error('Function not implemented.');
-            }}
-          />
-        </div>
-        <div className="data-table">
-          <InventoryTable />
-          <Pagination
-            totalItems={10}
-            itemsPerPage={5}
-            currentPage={0}
-            onPageChange={function (page: number): void {
-              throw new Error('Function not implemented.');
-            }}
-          />
-        </div>
-      </div>
-      <Footer />
-    </>
+        <RegisterProductButton
+          onClick={() => console.log('clickRegisterProductButton')}
+        />
+      </section>
+      <InventoryTable header={printRequests.header} data={printRequests.data} />
+      <Pagination
+        totalItems={10}
+        itemsPerPage={5}
+        currentPage={0}
+        onPageChange={(pageNumer) => console.log(`pageNumber: ${pageNumer}`)}
+      />
+    </DefaultPage>
   );
 }
 

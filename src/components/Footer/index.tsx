@@ -2,80 +2,68 @@ import './styles.css';
 
 import React from 'react';
 
-const Footer: React.FC = () => {
+type FooterSection = {
+  title: string;
+  links: { description: string; link: string }[];
+};
+
+const footerSections: FooterSection[] = [
+  {
+    title: 'Assuntos',
+    links: [
+      { description: 'Estudantes', link: '' },
+      { description: 'Acesso à informação', link: '' },
+      { description: 'Ensino', link: '' },
+      { description: 'Pesquisa e inovação', link: '' },
+      { description: 'Extensão', link: '' },
+      { description: 'Servidores', link: '' },
+    ],
+  },
+  {
+    title: 'Serviços',
+    links: [
+      { description: 'Sobre o IFCE', link: '' },
+      { description: 'Perguntas frequentes', link: '' },
+      { description: 'Contato', link: '' },
+      { description: 'Serviços do IFCE', link: '' },
+      { description: 'Sistemas', link: '' },
+      { description: 'Comunicação Social', link: '' },
+    ],
+  },
+  {
+    title: 'Redes Sociais',
+    links: [
+      { description: 'Facebook', link: '' },
+      { description: 'Youtube', link: '' },
+      { description: 'Instagram', link: '' },
+      { description: 'Twitter', link: '' },
+      { description: 'Soundcloud', link: '' },
+      { description: 'Flickr', link: '' },
+    ],
+  },
+];
+
+interface FooterProps {
+  style?: React.CSSProperties;
+}
+
+const Footer: React.FC<FooterProps> = ({ style }) => {
   return (
-    <footer className="footer">
-      <div className="footer-wrapper">
-        <div className="column">
-          <h2 className="column-title">Assuntos</h2>
-          <ul className="column-list">
-            <li>
-              <a href="/">Estudantes</a>
-            </li>
-            <li>
-              <a href="/">Acesso à informação</a>
-            </li>
-            <li>
-              <a href="/">Ensino</a>
-            </li>
-            <li>
-              <a href="/">Pesquisa e inovação</a>
-            </li>
-            <li>
-              <a href="/">Extensão</a>
-            </li>
-            <li>
-              <a href="/">Servidores</a>
-            </li>
-          </ul>
-        </div>
-        <div className="column">
-          <h2 className="column-title">Serviços</h2>
-          <ul className="column-list">
-            <li>
-              <a href="/">Sobre o IFCE</a>
-            </li>
-            <li>
-              <a href="/">Perguntas frequentes</a>
-            </li>
-            <li>
-              <a href="/">Contato</a>
-            </li>
-            <li>
-              <a href="/">Serviços do IFCE</a>
-            </li>
-            <li>
-              <a href="/">Sistemas</a>
-            </li>
-            <li>
-              <a href="/">Comunicação Social</a>
-            </li>
-          </ul>
-        </div>
-        <div className="column">
-          <h2 className="column-title">Redes sociais</h2>
-          <ul className="column-list">
-            <li>
-              <a href="/">Facebook</a>
-            </li>
-            <li>
-              <a href="/">Youtube</a>
-            </li>
-            <li>
-              <a href="/">Instagram</a>
-            </li>
-            <li>
-              <a href="/">Twitter</a>
-            </li>
-            <li>
-              <a href="/">Soundcloud</a>
-            </li>
-            <li>
-              <a href="/">Flickr</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <footer className="footer" style={style}>
+      <section className="links">
+        {footerSections.map((footerSection) => (
+          <section className="footer-link-section" key={footerSection.title}>
+            <h3 className="footer-link-section-title">{footerSection.title}</h3>
+            <ul className="footer-link-section-links">
+              {footerSection.links.map((link) => (
+                <li key={link.description}>
+                  <a href={link.link}>{link.description}</a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </section>
     </footer>
   );
 };
