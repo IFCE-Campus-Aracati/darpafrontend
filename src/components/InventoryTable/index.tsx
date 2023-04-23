@@ -28,13 +28,13 @@ const InventoryTable: React.FC<InventoryTableProps> = ({ header, data }) => {
         <tbody className="inventory-table-body">
           {data.map((tableRow) => (
             <tr key={tableRow.id}>
-              <td className="id">{tableRow.id}</td>
-              <td className="product">{tableRow.product}</td>
-              <td className="description">{tableRow.description}</td>
-              <td className="amount">{tableRow.amount}</td>
-              <td className="edit-button">
+              <td className="inventory-table-id">{tableRow.id}</td>
+              <td className="inventory-table-product">{tableRow.product}</td>
+              <td className="inventory-table-description">{tableRow.description}</td>
+              <td className="inventory-table-amount">{tableRow.amount}</td>
+              <td className="inventory-table-edit-button">
                 {/* TODO: criar um componente para esse botão */}
-                <button className="icon-button">
+                <button className="inventory-table-icon-button">
                   <img src="src\assets\button-edit (1).svg" alt="Button Edit"></img>
                 </button>
               </td>

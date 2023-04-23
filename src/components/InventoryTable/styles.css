@@ -19,31 +19,31 @@
   background-color: rgba(175, 172, 172, 0.2);
 }
 
-.id {
+.inventory-table-id {
   width: 70px;
 }
 
-.id,
-.amount,
-.edit-button {
+.inventory-table-id,
+.inventory-table-amount,
+.inventory-tableedit-button {
   text-align: center;
 }
 
-.product {
+.inventory-table-product {
   max-width: 150px;
 }
 
-.description {
+.inventory-table-description {
   width: 550px;
 }
 
-.product,
-.description {
+.inventory-table-product,
+.inventory-table-description {
   text-align: left;
   word-wrap: break-word;
 }
 
-.icon-button {
+.inventory-table-icon-button {
   scale: 0.7;
   border: none;
   cursor: pointer;
