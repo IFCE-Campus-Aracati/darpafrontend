@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
 import './styles.css';
-import MenuButton from '../MenuButton';
+
+import React, { useState } from 'react';
+
 import Avatar from '../Avatar';
 import Menu from '../Menu';
-import Sidebar from '../Sidebar';
+import MenuButton from '../MenuButton';
 
 interface HeaderProps {
   username: string;
   onLogout: () => void;
+  menuButtonAction: () => void; // hack para desacoplar a barra lateral
 }
 
-const Header: React.FC<HeaderProps> = ({ username, onLogout }) => {
+const Header: React.FC<HeaderProps> = ({ username, onLogout, menuButtonAction }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -20,23 +22,20 @@ const Header: React.FC<HeaderProps> = ({ username, onLogout }) => {
 
   const handleMenuButtonClick = () => {
     setIsSidebarOpen(!isSidebarOpen);
+    menuButtonAction();
   };
 
   return (
-    <header className="header">
+    <header className="default-header">
       <div className="header-left">
-        <MenuButton onClick={handleMenuButtonClick} isOpen={isSidebarOpen}/>
-        <img
-          src="src\assets\img\logoifce.png"
-          alt="Logo ifce"
-          className="logo"
-        />
+        <MenuButton onClick={handleMenuButtonClick} isOpen={isSidebarOpen} />
+        <img src="src\assets\img\logoifce.png" alt="Logo ifce" className="logo" />
       </div>
       <div className="header-right">
-        <Avatar username={username} onClick={handleAvatarClick} />
+        {/* TODO: simplificar essa lógica */}
+        <Avatar username={username} clickAction={handleAvatarClick} />
         {isMenuOpen && <Menu onLogout={onLogout} />}
       </div>
-      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
     </header>
   );
 };

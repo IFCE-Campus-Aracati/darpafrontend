@@ -1,16 +1,19 @@
-import React from 'react';
 import './styles.css';
+
+import React from 'react';
 
 interface AvatarProps {
   username: string;
-  onClick: () => void;
+  clickAction: () => void;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ username, onClick }) => {
+const Avatar: React.FC<AvatarProps> = ({ username, clickAction }) => {
+  const firstLetter = username[0];
+
   return (
-    <div className="avatar" onClick={onClick}>
-      <span className="avatar-letter">{username[0]}</span>
-    </div>
+    <button type="button" className="avatar" onClick={clickAction}>
+      <span className="avatar-letter">{firstLetter}</span>
+    </button>
   );
 };
 

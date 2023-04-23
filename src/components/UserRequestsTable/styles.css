@@ -1,0 +1,69 @@
+.user-requests-table {
+  width: 1000px;
+  border-collapse: collapse;
+}
+
+.user-requests-table-head th {
+  padding: 15px 0;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.user-requests-table-body td {
+  color: var(--clr-black);
+  padding: 5px 10px;
+}
+
+.user-requests-table-body tr:nth-child(odd) {
+  background-color: rgba(175, 172, 172, 0.2);
+}
+
+.user-requests-table-id {
+  width: 70px;
+}
+
+.user-requests-table-id,
+.user-requests-table-date,
+.user-requests-table-status,
+.user-requests-table-edit-button {
+  text-align: center;
+}
+
+.user-requests-table-product,
+.user-requests-table-description {
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.user-requests-table-icon-button {
+  scale: 0.7;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.user-requests-table-action-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.user-requests-table-icon-button:hover {
+  cursor: pointer;
+}
+
+/* .aprovado {
+  color: #8ec63f;
+}
+
+.pendente {
+  color: #efa300;
+}
+
+.reprovado {
+  color: #b94a48;
+}
+
+.concluido {
+  color: #0038ff;
+} */

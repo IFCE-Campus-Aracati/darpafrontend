@@ -1,0 +1,50 @@
+.printer-table {
+  width: 1000px;
+  border-collapse: collapse;
+}
+
+.printer-table-head th {
+  padding: 15px 0;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.printer-table-body td {
+  color: var(--clr-black);
+  padding: 5px 10px;
+}
+
+.printer-table-body tr:nth-child(odd) {
+  background-color: rgba(175, 172, 172, 0.2);
+}
+
+.printer-table-id {
+  width: 70px;
+  text-align: center;
+}
+
+.printer-table-name {
+  width: 200px;
+}
+
+.printer-table-name,
+.printer-table-owner .printer-table-description {
+  word-wrap: break-word;
+}
+
+.printer-table-action-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.printer-table-icon-button {
+  scale: 0.7;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.printer-table-icon-button:hover {
+  cursor: pointer;
+}

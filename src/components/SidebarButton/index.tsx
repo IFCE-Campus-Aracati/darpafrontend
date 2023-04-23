@@ -1,23 +1,43 @@
-import React from 'react';
 import './styles.css';
+
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface SidebarButtonProps {
   icon: string;
   label: string;
   isSelected: boolean;
-  onClick: () => void;
+  sidebarButtonOnClick: () => void;
+  navigateTo: string;
 }
 
-const SidebarButton: React.FC<SidebarButtonProps> = ({ icon, label, isSelected, onClick }) => {
+const SidebarButton: React.FC<SidebarButtonProps> = ({
+  icon,
+  label,
+  isSelected,
+  sidebarButtonOnClick,
+  navigateTo,
+}) => {
   return (
-    <button className={`sidebar-button ${isSelected ? 'selected' : ''}`} onClick={onClick}>
-      <div className="sidebar-button-icon">
-        <img src={icon} alt="Page icon" />
-      </div>
-      <div className="sidebar-button-label">
-        <span>{label}</span>
-        {isSelected ? null : <img className='sidebar-button-arrow' src="src\assets\arrow.svg" alt="Arrow icon" />}
-      </div>
+    <button
+      className={isSelected ? 'sidebar-button-selected' : 'sidebar-button'}
+      onClick={sidebarButtonOnClick}
+    >
+      <img className="sidebar-button-icon" src={icon} alt="Page icon" />
+      <Link
+        className={isSelected ? 'sidebar-button-label-selected' : 'sidebar-button-label'}
+        to={navigateTo}
+        replace={true}
+      >
+        {label}
+      </Link>
+      {isSelected ? null : (
+        <img
+          className="sidebar-button-arrow"
+          src="src\assets\arrow.svg"
+          alt="Arrow icon"
+        />
+      )}
     </button>
   );
 };

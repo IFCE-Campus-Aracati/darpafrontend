@@ -1,0 +1,23 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 2fr auto;
+}
+
+.page-content {
+  margin-top: 56px;
+  grid-row: 2;
+  min-height: 92vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 850px) {
+  .page-content {
+    min-height: 90vh;
+  }
+}

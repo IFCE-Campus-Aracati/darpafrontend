@@ -1,5 +1,6 @@
-import React from 'react';
 import './styles.css';
+
+import React from 'react';
 
 interface MenuButtonProps {
   onClick: () => void;
@@ -10,9 +11,9 @@ const MenuButton: React.FC<MenuButtonProps> = ({ onClick, isOpen }) => {
   return (
     <button className="menu-button" onClick={onClick}>
       {isOpen ? (
-        <img src="src\assets\close.svg" alt="Close menu" />
+        <img src="src\assets\menu-icon.svg" alt=" menu" />
       ) : (
-        <img src="src\assets\menu-icon.svg" alt="Open menu" />
+        <img src="src\assets\menu-icon.svg" alt=" menu" />
       )}
     </button>
   );
