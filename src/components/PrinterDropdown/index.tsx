@@ -5,29 +5,42 @@ import { IoIosArrowDown } from 'react-icons/io';
 
 interface PrinterDropdownProps {
   printers: string[];
+  onSelected: (selectedPrinterName: string) => void;
 }
 
-const PrinterDropdown: React.FC<PrinterDropdownProps> = ({ printers }) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const PrinterDropdown: React.FC<PrinterDropdownProps> = ({ printers, onSelected }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState('');
 
   const handleDropdownToggle = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsOpen(!isOpen);
+  };
+
+  const handleItemClick = (printer: string) => {
+    setSelectedItem(printer);
+    onSelected(printer);
+    setIsOpen(false);
   };
 
   return (
-    <div className="printer-dropdown-container">
-      <button className="printer-dropdown-header" onClick={handleDropdownToggle}>
-        {printers[0]}
-        <IoIosArrowDown className={isDropdownOpen ? 'arrow-icon open' : 'arrow-icon'} />
+    <nav className="printer-selection-dropdown">
+      <button
+        className="printer-selection-dropdown-button"
+        onClick={handleDropdownToggle}
+      >
+        {selectedItem ? selectedItem : printers[0]}
+        <IoIosArrowDown className={isOpen ? 'arrow-icon open' : 'arrow-icon'} />
       </button>
-      {isDropdownOpen && (
-        <ul className="printer-dropdown-list">
+      {isOpen && (
+        <ul className="printer-selection-dropdown-menu">
           {printers.map((printer) => (
-            <li key={printer}>{printer}</li>
+            <li key={printer}>
+              <button onClick={() => handleItemClick(printer)}>{printer}</button>
+            </li>
           ))}
         </ul>
       )}
-    </div>
+    </nav>
   );
 };
 

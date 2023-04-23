@@ -1,34 +1,50 @@
-table {
-  font-family: 'Roboto', sans-serif;
+.printer-table {
+  width: 1000px;
   border-collapse: collapse;
-  width: 100%;
 }
 
-th {
+.printer-table-head th {
+  padding: 15px 0;
+  font-size: large;
   font-weight: bold;
   text-align: center;
-  padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+.printer-table-body td {
+  color: var(--clr-black);
+  padding: 5px 10px;
 }
 
-td {
+.printer-table-body tr:nth-child(odd) {
+  background-color: rgba(175, 172, 172, 0.2);
+}
+
+.printer-table-id {
+  width: 70px;
   text-align: center;
 }
 
-.action-buttons {
+.printer-table-name {
+  width: 200px;
+}
+
+.printer-table-name,
+.printer-table-owner .printer-table-description {
+  word-wrap: break-word;
+}
+
+.printer-table-action-buttons {
   display: flex;
   justify-content: center;
 }
 
-.icon-button {
+.printer-table-icon-button {
   scale: 0.7;
-  background-color: transparent;
   border: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
-.icon-button:hover {
+.printer-table-icon-button:hover {
   cursor: pointer;
 }

@@ -1,54 +1,54 @@
-.requests-table {
+.user-requests-table {
   width: 1000px;
   border-collapse: collapse;
 }
 
-.requests-table-head th {
+.user-requests-table-head th {
   padding: 15px 0;
   font-size: large;
   font-weight: bold;
   text-align: center;
 }
 
-.requests-table-body td {
+.user-requests-table-body td {
   color: var(--clr-black);
   padding: 5px 10px;
 }
 
-.requests-table-body tr:nth-child(odd) {
+.user-requests-table-body tr:nth-child(odd) {
   background-color: rgba(175, 172, 172, 0.2);
 }
 
-.id {
+.user-requests-table-id {
   width: 70px;
 }
 
-.id,
-.date,
-.status,
-.edit-button {
+.user-requests-table-id,
+.user-requests-table-date,
+.user-requests-table-status,
+.user-requests-table-edit-button {
   text-align: center;
 }
 
-.product,
-.description {
+.user-requests-table-product,
+.user-requests-table-description {
   text-align: left;
   word-wrap: break-word;
 }
 
-.icon-button {
+.user-requests-table-icon-button {
   scale: 0.7;
   border: none;
   cursor: pointer;
   background-color: transparent;
 }
 
-.action-buttons {
+.user-requests-table-action-buttons {
   display: flex;
   justify-content: center;
 }
 
-.icon-button:hover {
+.user-requests-table-icon-button:hover {
   cursor: pointer;
 }
 

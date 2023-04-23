@@ -1,12 +1,14 @@
 import './styles.css';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface SidebarButtonProps {
   icon: string;
   label: string;
   isSelected: boolean;
   sidebarButtonOnClick: () => void;
+  navigateTo: string;
 }
 
 const SidebarButton: React.FC<SidebarButtonProps> = ({
@@ -14,6 +16,7 @@ const SidebarButton: React.FC<SidebarButtonProps> = ({
   label,
   isSelected,
   sidebarButtonOnClick,
+  navigateTo,
 }) => {
   return (
     <button
@@ -21,11 +24,13 @@ const SidebarButton: React.FC<SidebarButtonProps> = ({
       onClick={sidebarButtonOnClick}
     >
       <img className="sidebar-button-icon" src={icon} alt="Page icon" />
-      <p
+      <Link
         className={isSelected ? 'sidebar-button-label-selected' : 'sidebar-button-label'}
+        to={navigateTo}
+        replace={true}
       >
         {label}
-      </p>
+      </Link>
       {isSelected ? null : (
         <img
           className="sidebar-button-arrow"

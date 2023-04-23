@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ username, onLogout, menuButtonAction })
   };
 
   return (
-    <header className="header">
+    <header className="default-header">
       <div className="header-left">
         <MenuButton onClick={handleMenuButtonClick} isOpen={isSidebarOpen} />
         <img src="src\assets\img\logoifce.png" alt="Logo ifce" className="logo" />
