@@ -1,6 +1,6 @@
 import './styles.css';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import SidebarButton from '../SidebarButton';
 import UserProfile from '../UserProfile';
@@ -16,6 +16,12 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen }) => {
+  const [selectedButton, setSelectedButton] = useState<string>('');
+
+  const handleButtonClick = (label: string) => {
+    setSelectedButton(label);
+  };
+
   return (
     <section className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
       <UserProfile user={user} />
@@ -23,46 +29,46 @@ const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen }) => {
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Minhas solicitações"
-          isSelected={false}
-          sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
+          isSelected={selectedButton === 'Minhas solicitações'}
+          sidebarButtonOnClick={() => handleButtonClick('Minhas solicitações')}
         />
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Alterar senha"
-          isSelected={false}
-          sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
+          isSelected={selectedButton === 'Alterar senha'}
+          sidebarButtonOnClick={() => handleButtonClick('Alterar senha')}
         />
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Editar perfil"
-          isSelected={false}
-          sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
+          isSelected={selectedButton === 'Editar perfil'}
+          sidebarButtonOnClick={() => handleButtonClick('Editar perfil')}
         />
         {isADM && (
           <>
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Contas"
-              isSelected={false}
-              sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
+              isSelected={selectedButton === 'Contas'}
+              sidebarButtonOnClick={() => handleButtonClick('Contas')}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Agendamentos"
-              isSelected={false}
-              sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
+              isSelected={selectedButton === 'Agendamentos'}
+              sidebarButtonOnClick={() => handleButtonClick('Agendamentos')}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Estoques"
-              isSelected={true}
-              sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
+              isSelected={selectedButton === 'Estoques'}
+              sidebarButtonOnClick={() => handleButtonClick('Estoques')}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Impressoras"
-              isSelected={false}
-              sidebarButtonOnClick={() => console.log('sibebarButtonOnClick')}
+              isSelected={selectedButton === 'Impressoras'}
+              sidebarButtonOnClick={() => handleButtonClick('Impressoras')}
             />
           </>
         )}
