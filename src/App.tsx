@@ -1,13 +1,9 @@
 import './index.css';
 
-import UserHome from './pages/UserHome';
+import AppRoutes from './routes';
 
 function App() {
-  return (
-    <>
-      <UserHome />
-    </>
-  );
+  return <AppRoutes />;
 }
 
 export default App;

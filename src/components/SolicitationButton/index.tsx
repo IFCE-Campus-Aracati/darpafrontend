@@ -7,8 +7,8 @@ interface ButtonProps {
 }
 const SolicitationButton: React.FC<ButtonProps> = ({ onClick }) => {
   return (
-    <button className="new-request-button" onClick={onClick}>
-      <MdAdd /> Nova solicitação
+    <button className="new-solicitation-button" onClick={onClick}>
+      <MdAdd size={32} /> Nova solicitação
     </button>
   );
 };

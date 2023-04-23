@@ -1,0 +1,50 @@
+.inventory-table {
+  width: 1000px;
+  border-collapse: collapse;
+}
+
+.inventory-table-head th {
+  padding: 15px 0;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.inventory-table-body td {
+  color: var(--clr-black);
+  padding: 5px 10px;
+}
+
+.inventory-table-body tr:nth-child(odd) {
+  background-color: rgba(175, 172, 172, 0.2);
+}
+
+.inventory-table-id {
+  width: 70px;
+}
+
+.inventory-table-id,
+.inventory-table-amount,
+.inventory-tableedit-button {
+  text-align: center;
+}
+
+.inventory-table-product {
+  max-width: 150px;
+}
+
+.inventory-table-description {
+  width: 550px;
+}
+
+.inventory-table-product,
+.inventory-table-description {
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.inventory-table-icon-button {
+  scale: 0.7;
+  border: none;
+  cursor: pointer;
+}

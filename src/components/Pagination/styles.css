@@ -14,17 +14,16 @@
   height: 40px;
   margin: 0 5px;
   border: none;
-  background-color: #19882c;
+  background-color: var(--clr-green-2);
   border-radius: 10px;
-  font-family: 'Roboto', 'sans-serif';
   font-weight: 500;
   font-size: 18px;
   cursor: pointer;
-  color: #fff;
+  color: var(--clr-white);
 }
 
 .pagination-button:hover {
-  background-color: #19882c;
+  background-color: var(--clr-green-2);
 }
 
 .pagination-button:active {

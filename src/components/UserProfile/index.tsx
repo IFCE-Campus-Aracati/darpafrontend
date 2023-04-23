@@ -1,21 +1,23 @@
 import './styles.css';
 
-import React, { useState } from 'react';
+import React from 'react';
 
-function UserProfile() {
-  const [user, setUser] = useState({
-    name: 'Reperkilson',
-    photo: 'https://via.placeholder.com/150',
-    qualification: 'Aluno, Bolsista',
-  });
+interface UserProfileProps {
+  user: {
+    name: string;
+    photo: string;
+    qualification: string;
+  };
+}
 
+const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
   return (
-    <div className="user-profile">
-      <img src="src\assets\Vector.svg" alt="Foto do usuário" />
+    <section className="user-profile">
+      <img src={user.photo} alt="Foto do usuário" />
       <h2>{user.name}</h2>
       <p>{user.qualification}</p>
-    </div>
+    </section>
   );
-}
+};
 
 export default UserProfile;

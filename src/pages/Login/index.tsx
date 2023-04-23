@@ -1,59 +1,18 @@
 import './style.css';
 
-import React from 'react';
-import logoIFCE from '../../assets/img/logo-ifce.svg'
-import { Link } from 'react-router-dom';
+import LoginForm from '../../components/LoginForm';
 
-
-
-interface LoginPgSet {
-  onLogout: () => void;
-}
-
-const LoginForm: React.FC = ({  }) => {
+const LoginPage = () => {
   return (
-    <div className="container-background-l1">
-      <div className="logoifce">
-        <img src={logoIFCE} alt="IFCE" />
-      </div>
-      <div className="container-background-l2">
-        <div className="container-background-l3">
-
-          <h1 className="title">
-            <span>Fazer login</span>
-          </h1>
-          <h2 className="subtitle">
-            <span>Bem vindo! Por favor, informe seus dados.</span>
-          </h2>
-
-
-          <div className="inputEmail">
-            <label htmlFor="email">Email</label>
-            <br />
-            <input type="text" name="email" id="email" placeholder="Digitre seu E-mail" />
-          </div>
-
-          <div className="inputSenha">
-            <label htmlFor="Password">Senha</label>
-            <br />
-            <input type="text" name="Password" id="Password" placeholder="********" />
-          </div>
-          <button className="button-login">Login</button>
-          <div className="resetPassword">
-            <a href="esqueceu">Esqueceu sua senha?</a>
-            {//<Link to="/esqueceu-senha">Esqueceu sua senha?</Link>
-            }
-           </div>
-          <div className="createAcc">
-            <a href="cadastra">Não tem cadastro?</a>
-            {//<Link to="/CreateAccount">Esqueceu sua senha?</Link>
-            }
-          </div>
-        </div>
-      </div>
-    </div>
+    <main className="login-page">
+      <LoginForm
+        onLogin={(email, password) => console.log(`LoginForm: ${email}:${password}`)}
+      />
+      <section className="login-image-container">
+        <img className="login-image" src="src/assets/img/logo-ifce.svg" alt="IFCE" />
+      </section>
+    </main>
   );
 };
 
-
-export default LoginForm;
+export default LoginPage;
