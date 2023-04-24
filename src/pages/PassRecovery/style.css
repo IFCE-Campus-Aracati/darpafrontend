@@ -1,0 +1,228 @@
+/* .background {
+  display: flex;
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  overflow-y: scroll;
+  background: rgba(33, 33, 33, 0.6);
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 560px;
+  height: 253px;
+  left: 680px;
+  top: 414px;
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+.box span {
+  position: absolute;
+  width: 406px;
+  height: 19px;
+  left: 77px;
+  top: 59px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  display: flex;
+  align-items: center;
+  color: rgba(10, 85, 23, 0.83);
+}
+
+.header {
+  align-items: center;
+  background: #0a5517;
+  width: 560px;
+  height: 39px;
+  border-top-right-radius: 14.5px;
+  border-top-left-radius: 14.5px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+.header img {
+  margin-top: 10px;
+  margin-left: 526px;
+}
+
+.header header {
+  position: absolute;
+  width: 300px;
+  height: 19px;
+  left: 146px;
+  top: 10px;
+}
+
+.input-background {
+  position: absolute;
+  width: 477px;
+  height: 53px;
+  left: 41px;
+  top: 98px;
+
+  background: rgba(129, 129, 129, 0.3);
+  border-radius: 10px;
+}
+
+.input-email {
+  margin-top: 7px;
+  margin-left: 27px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: rgba(0, 0, 0, 0.57);
+}
+
+.input-email input {
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: flex-start;
+  width: 425px;
+  height: 27px;
+  padding-left: 11px;
+
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #afacac;
+
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #afacac;
+}
+
+.button-confirm {
+  margin-top: 141px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  height: 31px;
+  width: 199px;
+  background: #0a5517;
+
+  border-style: solid;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+} */
+/* Estilos da página de recuperação de senha */
+
+.password-recovery-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--clr-green-3);
+}
+
+.password-recovery-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-white);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 600px;
+}
+
+.password-recovery-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--clr-green-2);
+  border-radius: 10px 10px 0 0;
+}
+
+.password-recovery-body-container {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-recovery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 10px 15px;
+  color: var(--clr-white);
+  font-size: 0.8rem;
+}
+
+.password-recovery-header img {
+  cursor: pointer;
+  height: 22px;
+  width: 22px;
+}
+
+.password-recovery-message {
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.password-recovery-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.password-recovery-input-email {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.password-recovery-input-email label {
+  font-size: 0.8rem;
+}
+
+.password-recovery-input-email input[type='email'] {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--clr-white);
+  width: 100%;
+}
+
+.password-recovery-button-confirm {
+  background-color: var(--clr-green-2);
+  color: var(--clr-white);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  min-width: 200px;
+}
