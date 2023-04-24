@@ -6,23 +6,34 @@ import close from '../../assets/close-white.svg';
 
 const PassRecovery: React.FC = () => {
   return (
-    <div className="background">
-      <div className="box">
-        <div className="header">
-          <header>Esqueceu a senha? Sem problemas!</header>
-          <img src={close} alt="FECHAR" />
+    <main className="password-recovery-page">
+      <section className="password-recovery-container">
+        <div className="password-recovery-title-container">
+          <header className="password-recovery-header">
+            <h1>Esqueceu a senha? Sem problemas!</h1>
+            <img src={close} alt="FECHAR" />
+          </header>
         </div>
-        <span>Insira o endereço de e-mail associado à sua conta Darpa.</span>
-        <div className="input-background">
-          <div className="input-email">
-            <label htmlFor="email">Seu endereço de e-mail</label>
-            <br />
-            <input type="text" name="email" id="email" placeholder="Digitre seu E-mail" />
+        <div className="password-recovery-body-container">
+          <span className="password-recovery-message">
+            Insira o endereço de e-mail associado à sua conta.
+          </span>
+          <div className="password-recovery-input-container">
+            <div className="password-recovery-input-email">
+              <label htmlFor="email">Seu endereço de e-mail</label>
+              <br />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Digite seu E-mail"
+              />
+            </div>
           </div>
+          <button className="password-recovery-button-confirm">Confirmar</button>
         </div>
-        <button className="button-confirm">Comfirmar</button>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

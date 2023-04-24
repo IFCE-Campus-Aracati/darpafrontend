@@ -1,4 +1,4 @@
-.background {
+/* .background {
   display: flex;
   position: absolute;
   width: 1920px;
@@ -122,4 +122,107 @@
   font-size: 16px;
   line-height: 19px;
   color: #ffffff;
+} */
+/* Estilos da página de recuperação de senha */
+
+.password-recovery-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--clr-green-3);
+}
+
+.password-recovery-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-white);
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 600px;
+}
+
+.password-recovery-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--clr-green-2);
+  border-radius: 10px 10px 0 0;
+}
+
+.password-recovery-body-container {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-recovery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 10px 15px;
+  color: var(--clr-white);
+  font-size: 0.8rem;
+}
+
+.password-recovery-header img {
+  cursor: pointer;
+  height: 22px;
+  width: 22px;
+}
+
+.password-recovery-message {
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.password-recovery-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.password-recovery-input-email {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.password-recovery-input-email label {
+  font-size: 0.8rem;
+}
+
+.password-recovery-input-email input[type='email'] {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--clr-white);
+  width: 100%;
+}
+
+.password-recovery-button-confirm {
+  background-color: var(--clr-green-2);
+  color: var(--clr-white);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  min-width: 200px;
 }
