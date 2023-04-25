@@ -1,5 +1,3 @@
-import './index.css';
-
 import AppRoutes from './routes';
 
 function App() {
