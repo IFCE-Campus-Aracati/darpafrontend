@@ -2,56 +2,48 @@ import './styles.css';
 
 import React from 'react';
 
-function InventoryTable() {
-  // Dados mocados das solicitações de impressão
-  const printRequests = [
-    {
-      id: 1,
-      product: 'Filamento ABS',
-      description: 'Filamento ABS Premium para impressora 3D 500g 1,7mm (Branco Gesso)',
-      amount: 10,
-    },
-    {
-      id: 2,
-      product: 'Filamento PLA',
-      description: 'Filamento PLA Premium para Impressora 3D 1,75mm 1kg(Preto)',
-      amount: 10,
-    },
-    {
-      id: 3,
-      product: 'Placa MDF',
-      description: 'MDF cru 3mm (verde)',
-      amount: 10,
-    },
-  ];
-
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Produto</th>
-          <th>Descrição</th>
-          <th>Estoque</th>
-        </tr>
-      </thead>
-      <tbody>
-        {printRequests.map((request) => (
-          <tr key={request.id}>
-            <td>{request.id}</td>
-            <td>{request.product}</td>
-            <td>{request.description}</td>
-            <td>{request.amount}</td>
-            <td className="action-buttons">
-              <button className="icon-button">
-                <img src="src\assets\button-edit (1).svg" alt=""></img>
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
+export interface InventoryTableDataProps {
+  id: number;
+  product: string;
+  description: string;
+  amount: number;
 }
+
+export interface InventoryTableProps {
+  header: string[];
+  data: InventoryTableDataProps[];
+}
+
+const InventoryTable: React.FC<InventoryTableProps> = ({ header, data }) => {
+  return (
+    <section className="inventory-table-section">
+      <table className="inventory-table">
+        <thead className="inventory-table-head">
+          <tr>
+            {header.map((columnTitle) => (
+              <th key={columnTitle}>{columnTitle}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="inventory-table-body">
+          {data.map((tableRow) => (
+            <tr key={tableRow.id}>
+              <td className="inventory-table-id">{tableRow.id}</td>
+              <td className="inventory-table-product">{tableRow.product}</td>
+              <td className="inventory-table-description">{tableRow.description}</td>
+              <td className="inventory-table-amount">{tableRow.amount}</td>
+              <td className="inventory-table-edit-button">
+                {/* TODO: criar um componente para esse botão */}
+                <button className="inventory-table-icon-button">
+                  <img src="src\assets\button-edit (1).svg" alt="Button Edit"></img>
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+};
 
 export default InventoryTable;

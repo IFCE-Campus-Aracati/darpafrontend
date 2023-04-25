@@ -1,6 +1,7 @@
-import Modal from './pages/MyProfile';
-import useModal from './pages/MyProfile/useModal';
+import AppRoutes from './routes';
 
-export default function App() {
-  return <Modal />;
+function App() {
+  return <AppRoutes />;
 }
+
+export default App;

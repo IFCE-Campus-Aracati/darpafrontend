@@ -1,73 +1,73 @@
 import './styles.css';
 
-import { useState } from 'react';
-
-import userProfileImg from '../../assets/Vector.svg';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
+import DefaultPage from '../../components/DefaultPage';
 import Pagination from '../../components/Pagination';
-import PrintRequestsTable from '../../components/PrintTable';
 import SearchBar from '../../components/SearchBar';
-import Sidebar from '../../components/Sidebar';
 import SolicitationButton from '../../components/SolicitationButton';
+import UserRequestsTable, {
+  UserRequestsTableProps,
+} from '../../components/UserRequestsTable';
+
+const printRequests: UserRequestsTableProps = {
+  header: ['ID', 'Nome', 'Data', 'Tipo', 'Descrição', 'Status', 'Ação'],
+  data: [
+    {
+      id: 1,
+      name: 'Action Figure',
+      date: new Date('01/04/2022'),
+      type: 'Impressão 3D',
+      description: 'Impressão em Abs preto',
+      status: 'PENDENTE',
+    },
+    {
+      id: 2,
+      name: 'Trófeu',
+      date: new Date('03/04/2022'),
+      type: 'Corte a Laser',
+      description: 'Corte em MDF 3mm',
+      status: 'APROVADO',
+    },
+    {
+      id: 3,
+      name: 'Miniatura Bolsonaro',
+      date: new Date('05/04/2022'),
+      type: 'Impressão 3D',
+      description: 'Busto do mito em PLA vermelho',
+      status: 'REPROVADO',
+    },
+    {
+      id: 4,
+      name: 'Miniatura Lula',
+      date: new Date('07/04/2022'),
+      type: 'Impressão 3D',
+      description: 'Busto do Lula em PLA Azul',
+      status: 'CONCLUIDO',
+    },
+  ],
+};
 
 function UserHome() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSideBar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
   return (
-    <>
-      <Header
-        username="User"
-        onLogout={() => {
-          throw new Error('Function not implemented.');
-        }}
-        menuButtonAction={() => toggleSideBar()}
-      />
-      <div className="container">
-        <Sidebar
-          isOpen={isSidebarOpen}
-          onClose={function (): void {
-            throw new Error('Function not implemented.');
-          }}
-          user={{
-            name: 'Reperkilson',
-            photo: userProfileImg,
-            qualification: 'Aluno, Bolsista',
-          }}
-          isADM={false}
+    <DefaultPage>
+      <section className="home-page-title">
+        <h1>Minhas solicitações</h1>
+      </section>
+      <section className="home-page-content-actions">
+        <SearchBar
+          onSearch={(term) => console.log(term)}
+          placeholder={'Buscar'}
+          wsize={400}
         />
-        <div className="page-title">Minhas solicitações</div>
-        <div className="buttons">
-          <SearchBar
-            onSearch={function (term: string): void {
-              throw new Error('Function not implemented.');
-            }}
-            placeholder={'Buscar'}
-          />
-          <SolicitationButton
-            onClick={function (): void {
-              throw new Error('Function not implemented.');
-            }}
-          />
-        </div>
-        <div className="data-table">
-          <PrintRequestsTable />
-          <Pagination
-            totalItems={10}
-            itemsPerPage={5}
-            currentPage={0}
-            onPageChange={function (page: number): void {
-              throw new Error('Function not implemented.');
-            }}
-          />
-        </div>
-      </div>
-      <Footer />
-    </>
+        <SolicitationButton onClick={() => console.log('SolicitationButton')} />
+      </section>
+      <UserRequestsTable header={printRequests.header} data={printRequests.data} />
+      <Pagination
+        totalItems={10}
+        itemsPerPage={5}
+        currentPage={0}
+        onPageChange={(pageNumer) => console.log(`pageNumber: ${pageNumer}`)}
+      />
+    </DefaultPage>
   );
 }
 

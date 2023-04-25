@@ -1,6 +1,6 @@
 import './styles.css';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import SidebarButton from '../SidebarButton';
 import UserProfile from '../UserProfile';
@@ -11,68 +11,76 @@ interface SidebarProps {
     photo: string;
     qualification: string;
   };
-  isOpen: boolean;
   isADM: boolean;
-  onClose: () => void;
+  isOpen: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen, onClose }) => {
-  const handleLinkClick = () => {
-    onClose();
+const Sidebar: React.FC<SidebarProps> = ({ user, isADM, isOpen }) => {
+  const [selectedButton, setSelectedButton] = useState<string>('');
+
+  const handleButtonClick = (label: string) => {
+    setSelectedButton(label);
   };
 
   return (
-    <div className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
-      <nav className="sidebar-nav">
-        <UserProfile user={user} />
+    <section className={`default-sidebar ${isOpen ? 'default-sidebar-open' : ''}`}>
+      <UserProfile user={user} />
+      <nav className="default-sidebar-nav">
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Minhas solicitações"
-          isSelected={false}
-          onClick={handleLinkClick}
+          isSelected={selectedButton === 'Minhas solicitações'}
+          sidebarButtonOnClick={() => handleButtonClick('Minhas solicitações')}
+          navigateTo={'/'}
         />
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Alterar senha"
-          isSelected={false}
-          onClick={handleLinkClick}
+          isSelected={selectedButton === 'Alterar senha'}
+          sidebarButtonOnClick={() => handleButtonClick('Alterar senha')}
+          navigateTo={'/alterar-senha'}
         />
         <SidebarButton
           icon="src\assets\option-icon.svg"
           label="Editar perfil"
-          isSelected={false}
-          onClick={handleLinkClick}
+          isSelected={selectedButton === 'Editar perfil'}
+          sidebarButtonOnClick={() => handleButtonClick('Editar perfil')}
+          navigateTo={'/editar-perfil'}
         />
         {isADM && (
           <>
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Contas"
-              isSelected={false}
-              onClick={handleLinkClick}
+              isSelected={selectedButton === 'Contas'}
+              sidebarButtonOnClick={() => handleButtonClick('Contas')}
+              navigateTo={'/usuarios'}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Agendamentos"
-              isSelected={false}
-              onClick={handleLinkClick}
+              isSelected={selectedButton === 'Agendamentos'}
+              sidebarButtonOnClick={() => handleButtonClick('Agendamentos')}
+              navigateTo={'/agendamentos'}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Estoques"
-              isSelected={true}
-              onClick={handleLinkClick}
+              isSelected={selectedButton === 'Estoques'}
+              sidebarButtonOnClick={() => handleButtonClick('Estoques')}
+              navigateTo={'/estoque'}
             />
             <SidebarButton
               icon="src\assets\option-icon.svg"
               label="Impressoras"
-              isSelected={false}
-              onClick={handleLinkClick}
+              isSelected={selectedButton === 'Impressoras'}
+              sidebarButtonOnClick={() => handleButtonClick('Impressoras')}
+              navigateTo={'/impressoras'}
             />
           </>
         )}
       </nav>
-    </div>
+    </section>
   );
 };
 

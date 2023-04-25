@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import './styles.css';
 
 import React, { useState } from 'react';
@@ -11,26 +9,30 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ onLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleAvatarClick = () => {
-    setIsOpen(!isOpen);
-  };
-
   const handleLogoutClick = () => {
     onLogout();
     setIsOpen(false);
   };
 
   return (
-    <div className={`menu1 ${isOpen ? 'menu1-open' : ''}`}>
-      <div className="menu1-item">
-        <img src="src\assets\iconmonstr-user-2 1.svg" alt="userIcon" />
-        <span className="menu1-text"> Meu Perfil</span>
-      </div>
-      <div className="menu1-item" onClick={handleLogoutClick}>
-        <img src="src\assets\img\logout.svg" alt="logoutIcon" />
-        <span className="menu1-text"> Sair</span>
-      </div>
-    </div>
+    <nav className={isOpen ? 'avatar-menu-open' : 'avatar-menu'}>
+      <button className="avatar-menu-button">
+        <img
+          className="avatar-menu-button-icon"
+          src="src\assets\iconmonstr-user-2 1.svg"
+          alt="userIcon"
+        />
+        <span className="avatar-menu-button-text">Meu Perfil</span>
+      </button>
+      <button className="avatar-menu-button" onClick={handleLogoutClick}>
+        <img
+          className="avatar-menu-button-icon"
+          src="src\assets\img\logout.svg"
+          alt="logoutIcon"
+        />
+        <span className="avatar-menu-button-text">Sair</span>
+      </button>
+    </nav>
   );
 };
 

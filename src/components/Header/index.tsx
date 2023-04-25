@@ -26,13 +26,14 @@ const Header: React.FC<HeaderProps> = ({ username, onLogout, menuButtonAction })
   };
 
   return (
-    <header className="header">
+    <header className="default-header">
       <div className="header-left">
         <MenuButton onClick={handleMenuButtonClick} isOpen={isSidebarOpen} />
         <img src="src\assets\img\logoifce.png" alt="Logo ifce" className="logo" />
       </div>
       <div className="header-right">
-        <Avatar username={username} onClick={handleAvatarClick} />
+        {/* TODO: simplificar essa lógica */}
+        <Avatar username={username} clickAction={handleAvatarClick} />
         {isMenuOpen && <Menu onLogout={onLogout} />}
       </div>
     </header>
