@@ -1,6 +1,6 @@
 import './styles.css';
 
-export default function Modal() {
+export default function MyProfile() {
   return (
     <main className="modal-page-background">
       <section className="modal-page-container">
