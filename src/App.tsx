@@ -1,13 +1,6 @@
-import './index.css';
+import Modal from './pages/MyProfile';
+import useModal from './pages/MyProfile/useModal';
 
-import InventoryPage from './pages/InventoryPage';
-
-function App() {
-  return (
-    <>
-      <InventoryPage />
-    </>
-  );
+export default function App() {
+  return <Modal />;
 }
-
-export default App;
