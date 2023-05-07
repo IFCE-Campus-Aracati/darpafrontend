@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      cache_from:
+        - node:alpine
+    mem_limit: 512M
+    environment:
+      NODE_ENV: production
+    security_opt:
+      - no-new-privileges
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
