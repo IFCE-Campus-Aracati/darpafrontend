@@ -3,7 +3,7 @@ import './styles.css';
 import { useState } from 'react';
 
 interface LoginFormProps {
-  onLogin: (email: string, password: string) => void;
+  onLogin: (email: string, password: string) => Promise<void>;
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
@@ -18,14 +18,14 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
     setPassword(event.target.value);
   };
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    onLogin(email, password);
+    await onLogin(email, password);
   };
 
   return (
     <section className="login-form-container">
-      <form className="login-form" onSubmit={handleFormSubmit}>
+      <form className="login-form" onSubmit={(event) => handleFormSubmit(event)}>
         <h1 className="login-form-title">Fazer Login</h1>
         <h2 className="login-form-subtitle">Bem vindo! Por favor, informe seus dados.</h2>
         <label className="login-form-email-input">
