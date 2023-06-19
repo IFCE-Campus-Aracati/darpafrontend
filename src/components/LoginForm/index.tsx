@@ -55,7 +55,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
           <a href="/reset-password">Esqueceu sua senha?</a>
         </p>
         <p className="login-sign-up-link">
-          Não tem cadastro? <a href="/sign-up">Cadastrar-se</a>
+          Não tem cadastro? <a href="/cadastro">Cadastrar-se</a>
         </p>
       </form>
     </section>

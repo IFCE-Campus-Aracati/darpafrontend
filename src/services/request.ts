@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+import { Schedule } from '../components/ScheduleForm';
 import { UserRequestsTableDataProps } from '../components/UserRequestsTable';
 import { authHeader } from './data.service';
 
@@ -28,4 +29,33 @@ export async function getPrintRequests(page: number): Promise<PageOfRequests> {
     .then((res) => {
       return res.data;
     });
+}
+
+export type ScheduleResult = {
+  printRequestId: number;
+  userId: number;
+  status: string;
+};
+
+export async function newPrintRequest(schedule: Schedule): Promise<ScheduleResult> {
+  const auth = authHeader();
+  if (!auth) {
+    return Promise.reject();
+  }
+
+  return client.post(
+    '/api/v1/requests',
+    {
+      description: schedule.description,
+      file: schedule.file,
+      name: schedule.file?.name.split('.')[0],
+      date: schedule.date.toISOString().substring(0, 10),
+    },
+    {
+      headers: {
+        Authorization: auth.Authorization,
+        'Content-Type': 'multipart/form-data',
+      },
+    },
+  );
 }

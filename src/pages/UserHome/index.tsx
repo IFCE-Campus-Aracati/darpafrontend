@@ -4,10 +4,15 @@ import { useEffect, useState } from 'react';
 
 import DefaultPage from '../../components/DefaultPage';
 import Pagination from '../../components/Pagination';
+import ScheduleForm from '../../components/ScheduleForm';
 import SearchBar from '../../components/SearchBar';
 import SolicitationButton from '../../components/SolicitationButton';
 import UserRequestsTable from '../../components/UserRequestsTable';
-import { getPrintRequests, PageOfRequests } from '../../services/request';
+import {
+  getPrintRequests,
+  newPrintRequest,
+  PageOfRequests,
+} from '../../services/request';
 
 function UserHome() {
   const [page, setPage] = useState(0);
@@ -17,6 +22,8 @@ function UserHome() {
     totalPages: 0,
     currentPage: 0,
   });
+
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     (async (page: number) => {
@@ -36,7 +43,7 @@ function UserHome() {
           placeholder={'Buscar'}
           wsize={400}
         />
-        <SolicitationButton onClick={() => console.log('SolicitationButton')} />
+        <SolicitationButton onClick={() => setShowForm(true)} />
       </section>
       <UserRequestsTable
         header={['ID', 'Nome', 'Data', 'Descrição', 'Status', 'Ação']}
@@ -48,6 +55,18 @@ function UserHome() {
           totalPages={requests.totalPages}
           currentPage={requests.currentPage}
           onPageChange={(pageNumer) => setPage(pageNumer)}
+        />
+      )}
+
+      {showForm && (
+        <ScheduleForm
+          onSubmit={(s) => {
+            (async () => {
+              await newPrintRequest(s);
+            })();
+            setShowForm(false);
+          }}
+          onCancel={() => setShowForm(false)}
         />
       )}
     </DefaultPage>
