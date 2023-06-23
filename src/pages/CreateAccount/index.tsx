@@ -17,6 +17,7 @@ const CreateAccountPage = () => {
         onConfirmation={(name, email, password, passwordConfirmation) => {
           register(name, '', email, password)
             .then(() => {
+              window.alert('O cadastro foi bem sucedido');
               navigate('/login');
             })
             .catch(() => {

@@ -12,9 +12,13 @@ const LoginPage = () => {
     <main className="login-page">
       <LoginForm
         onLogin={async (email, password) => {
-          await login(email, password).then(() => {
-            navigate('/');
-          });
+          login(email, password)
+            .then(() => {
+              navigate('/');
+            })
+            .catch(() => {
+              window.alert('Email ou Senha inválidos');
+            });
         }}
       />
       <section className="login-image-container">
