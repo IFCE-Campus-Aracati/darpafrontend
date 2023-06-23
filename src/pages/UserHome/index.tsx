@@ -7,18 +7,16 @@ import Pagination from '../../components/Pagination';
 import ScheduleForm from '../../components/ScheduleForm';
 import SearchBar from '../../components/SearchBar';
 import SolicitationButton from '../../components/SolicitationButton';
-import UserRequestsTable from '../../components/UserRequestsTable';
-import {
-  getPrintRequests,
-  newPrintRequest,
-  PageOfRequests,
-} from '../../services/request';
+import UserRequestsTable, {
+  UserRequestsTableDataProps,
+} from '../../components/UserRequestsTable';
+import { getPrintRequests, newPrintRequest, Page } from '../../services/request';
 
 function UserHome() {
   const [page, setPage] = useState(0);
-  const [requests, setRequests] = useState<PageOfRequests>({
+  const [requests, setRequests] = useState<Page<UserRequestsTableDataProps>>({
     totalItems: 0,
-    requests: [],
+    items: [],
     totalPages: 0,
     currentPage: 0,
   });
@@ -47,7 +45,7 @@ function UserHome() {
       </section>
       <UserRequestsTable
         header={['ID', 'Nome', 'Data', 'Descrição', 'Status', 'Ação']}
-        data={requests?.requests ?? []}
+        data={requests.items}
       />
       {requests.totalPages > 1 && (
         <Pagination
@@ -62,9 +60,8 @@ function UserHome() {
         <ScheduleForm
           onSubmit={(s) => {
             (async () => {
-              await newPrintRequest(s);
+              await newPrintRequest(s).finally(() => setShowForm(false));
             })();
-            setShowForm(false);
           }}
           onCancel={() => setShowForm(false)}
         />

@@ -4,9 +4,9 @@ import React from 'react';
 
 export interface InventoryTableDataProps {
   id: number;
-  product: string;
+  name: string;
   description: string;
-  amount: number;
+  quantity: number;
 }
 
 export interface InventoryTableProps {
@@ -29,9 +29,9 @@ const InventoryTable: React.FC<InventoryTableProps> = ({ header, data }) => {
           {data.map((tableRow) => (
             <tr key={tableRow.id}>
               <td className="inventory-table-id">{tableRow.id}</td>
-              <td className="inventory-table-product">{tableRow.product}</td>
+              <td className="inventory-table-product">{tableRow.name}</td>
               <td className="inventory-table-description">{tableRow.description}</td>
-              <td className="inventory-table-amount">{tableRow.amount}</td>
+              <td className="inventory-table-amount">{tableRow.quantity}</td>
               <td className="inventory-table-edit-button">
                 {/* TODO: criar um componente para esse botão */}
                 <button className="inventory-table-icon-button">
