@@ -1,0 +1,46 @@
+.user-details-table {
+  width: 1000px;
+  border-collapse: collapse;
+}
+
+.user-details-table-head th {
+  padding: 15px 0;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.user-details-table-body td {
+  color: var(--clr-black);
+  padding: 5px 10px;
+}
+
+.user-details-table-body tr:nth-child(odd) {
+  background-color: rgba(175, 172, 172, 0.2);
+}
+
+.user-details-table-id {
+  width: 70px;
+}
+
+.user-details-table-id,
+.user-details-table-role,
+.user-details-table-edit-button {
+  text-align: center;
+}
+
+.user-details-table-icon-button {
+  scale: 0.7;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.user-details-table-action-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.user-details-table-icon-button:hover {
+  cursor: pointer;
+}

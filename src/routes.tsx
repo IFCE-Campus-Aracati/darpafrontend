@@ -6,6 +6,7 @@ import LoginPage from './pages/Login';
 import NotFound from './pages/NotFound';
 import PrinterManagementPage from './pages/PrinterManagementPage';
 import UserHome from './pages/UserHome';
+import UserManagement from './pages/UserManagement';
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/cadastro" element={<CreateAccountPage />} />
       <Route path="/" element={<UserHome />} />
+      <Route path="/usuarios" element={<UserManagement />} />
       <Route path="/estoque" element={<InventoryPage />} />
       <Route path="/impressoras" element={<PrinterManagementPage />} />
     </Routes>
