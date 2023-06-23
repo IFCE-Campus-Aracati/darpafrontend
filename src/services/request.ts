@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import { InventoryTableDataProps } from '../components/InventoryTable';
 import { PrinterTableData } from '../components/PrinterTable';
+import { ProductDetails } from '../components/ProductRegistrationForm';
 import { Schedule } from '../components/ScheduleForm';
 import { UserRequestsTableDataProps } from '../components/UserRequestsTable';
 import { authHeader } from './data.service';
@@ -112,4 +113,17 @@ export async function newPrintRequest(schedule: Schedule): Promise<ScheduleResul
       },
     )
     .then((res) => res.data);
+}
+
+export async function newProduct(product: ProductDetails): Promise<void> {
+  const auth = authHeader();
+  if (!auth) {
+    return Promise.reject();
+  }
+
+  return client.post('/api/v1/products', product, {
+    headers: {
+      Authorization: auth.Authorization,
+    },
+  });
 }

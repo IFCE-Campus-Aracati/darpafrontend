@@ -5,9 +5,10 @@ import { useEffect, useState } from 'react';
 import DefaultPage from '../../components/DefaultPage';
 import InventoryTable, { InventoryTableDataProps } from '../../components/InventoryTable';
 import Pagination from '../../components/Pagination';
+import ProductRegistrationForm from '../../components/ProductRegistrationForm';
 import RegisterProductButton from '../../components/RegisterProductButton';
 import SearchBar from '../../components/SearchBar';
-import { getProducts, Page } from '../../services/request';
+import { getProducts, newProduct, Page } from '../../services/request';
 
 function InventoryPage() {
   const [page, setPage] = useState(0);
@@ -17,6 +18,8 @@ function InventoryPage() {
     totalPages: 0,
     currentPage: 0,
   });
+
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     (async (page: number) => {
@@ -36,9 +39,7 @@ function InventoryPage() {
           placeholder={'Buscar Produto'}
           wsize={400}
         />
-        <RegisterProductButton
-          onClick={() => console.log('clickRegisterProductButton')}
-        />
+        <RegisterProductButton onClick={() => setShowForm(true)} />
       </section>
       <InventoryTable
         header={['ID', 'Produto', 'Descrição', 'Estoque']}
@@ -50,6 +51,17 @@ function InventoryPage() {
         currentPage={products.currentPage}
         onPageChange={(pageNumer) => setPage(pageNumer)}
       />
+
+      {showForm && (
+        <ProductRegistrationForm
+          onSubmit={(s) => {
+            (async () => {
+              await newProduct(s).finally(() => setShowForm(false));
+            })();
+          }}
+          onCancel={() => setShowForm(false)}
+        />
+      )}
     </DefaultPage>
   );
 }
