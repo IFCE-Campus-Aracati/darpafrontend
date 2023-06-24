@@ -3,21 +3,18 @@ import './styles.css';
 import React from 'react';
 
 interface PaginationProps {
-  totalItems: number;
-  itemsPerPage: number;
   currentPage: number;
+  totalItems: number;
+  totalPages: number;
   onPageChange: (page: number) => void;
 }
 
 const Pagination: React.FC<PaginationProps> = ({
-  totalItems,
-  itemsPerPage,
   currentPage,
+  totalItems,
+  totalPages,
   onPageChange,
 }) => {
-  // Calcula o número total de páginas
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
-
   // Cria um array com o número das páginas
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
@@ -27,7 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({
         <button
           className="pagination-button"
           onClick={() => onPageChange(currentPage - 1)}
-          disabled={currentPage === 1}
+          disabled={currentPage === 0}
         >
           <img src="src\assets\button-previous.svg" alt="" />
         </button>
@@ -36,7 +33,7 @@ const Pagination: React.FC<PaginationProps> = ({
           <button
             key={page}
             className={`pagination-button ${page === currentPage ? 'active' : ''}`}
-            onClick={() => onPageChange(page)}
+            onClick={() => onPageChange(page - 1)}
           >
             {page}
           </button>
@@ -44,7 +41,7 @@ const Pagination: React.FC<PaginationProps> = ({
         <button
           className="pagination-button"
           onClick={() => onPageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
+          disabled={currentPage === totalPages - 1}
         >
           <img src="src\assets\button-next.svg" alt="" />
         </button>

@@ -1,36 +1,33 @@
 import './styles.css';
 
+import { useEffect, useState } from 'react';
+
 import DefaultPage from '../../components/DefaultPage';
-import InventoryTable, { InventoryTableProps } from '../../components/InventoryTable';
+import InventoryTable, { InventoryTableDataProps } from '../../components/InventoryTable';
 import Pagination from '../../components/Pagination';
+import ProductRegistrationForm from '../../components/ProductRegistrationForm';
 import RegisterProductButton from '../../components/RegisterProductButton';
 import SearchBar from '../../components/SearchBar';
-
-const printRequests: InventoryTableProps = {
-  header: ['ID', 'Produto', 'Descrição', 'Estoque'],
-  data: [
-    {
-      id: 1,
-      product: 'Filamento ABS',
-      description: 'Filamento ABS Premium para impressora 3D 500g 1,7mm (Branco Gesso)',
-      amount: 10,
-    },
-    {
-      id: 2,
-      product: 'Filamento PLA',
-      description: 'Filamento PLA Premium para Impressora 3D 1,75mm 1kg(Preto)',
-      amount: 10,
-    },
-    {
-      id: 3,
-      product: 'Placa MDF',
-      description: 'MDF cru 3mm (verde)',
-      amount: 10,
-    },
-  ],
-};
+import { getProducts, newProduct, Page } from '../../services/request';
 
 function InventoryPage() {
+  const [page, setPage] = useState(0);
+  const [products, setProducts] = useState<Page<InventoryTableDataProps>>({
+    totalItems: 0,
+    items: [],
+    totalPages: 0,
+    currentPage: 0,
+  });
+
+  const [showForm, setShowForm] = useState(false);
+
+  useEffect(() => {
+    (async (page: number) => {
+      const results = await getProducts(page);
+      setProducts(results);
+    })(page);
+  }, [page]);
+
   return (
     <DefaultPage>
       <section className="inventory-page-title">
@@ -42,17 +39,29 @@ function InventoryPage() {
           placeholder={'Buscar Produto'}
           wsize={400}
         />
-        <RegisterProductButton
-          onClick={() => console.log('clickRegisterProductButton')}
-        />
+        <RegisterProductButton onClick={() => setShowForm(true)} />
       </section>
-      <InventoryTable header={printRequests.header} data={printRequests.data} />
-      <Pagination
-        totalItems={10}
-        itemsPerPage={5}
-        currentPage={0}
-        onPageChange={(pageNumer) => console.log(`pageNumber: ${pageNumer}`)}
+      <InventoryTable
+        header={['ID', 'Produto', 'Descrição', 'Estoque']}
+        data={products.items}
       />
+      <Pagination
+        totalItems={products.totalItems}
+        totalPages={products.totalPages}
+        currentPage={products.currentPage}
+        onPageChange={(pageNumer) => setPage(pageNumer)}
+      />
+
+      {showForm && (
+        <ProductRegistrationForm
+          onSubmit={(s) => {
+            (async () => {
+              await newProduct(s).finally(() => setShowForm(false));
+            })();
+          }}
+          onCancel={() => setShowForm(false)}
+        />
+      )}
     </DefaultPage>
   );
 }
